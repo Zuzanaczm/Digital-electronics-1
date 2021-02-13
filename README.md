@@ -17,4 +17,4 @@ git commit
 
 
 
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+[Google.com (https://www.google.com "Google's Homepage")
