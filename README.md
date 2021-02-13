@@ -19,3 +19,13 @@ git commit
 
 
 [Google.com](https://www.google.com "Google's Homepage")
+
+
+- [x] Finish my read.me file
+- [ ] Finish my homework
+- [ ] Survive this semester 
+
+_Emojis_ 
+:shamrock:
+:cherry_blossom:
+:rose:
