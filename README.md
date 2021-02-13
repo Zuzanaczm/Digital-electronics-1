@@ -4,3 +4,9 @@
 **sourcecode** `
 
 *This text is italicized*
+
+```
+git status
+git add
+git commit
+```
