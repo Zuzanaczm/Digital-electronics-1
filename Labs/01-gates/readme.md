@@ -11,7 +11,7 @@
 (Verification of De Morgan's laws of function f(c,b,a) )
 
 ### Listing of VHDL code of  - architecture :
-
+```
 architecture dataflow of gates is
 begin
     f_o  <= ((not b_i) and a_i) or ((not c_i) and (not b_i));
@@ -19,3 +19,4 @@ begin
     fnor_o <= not(b_i or (not a_i)) or not(c_i or b_i);
 
 end architecture dataflow;
+```
