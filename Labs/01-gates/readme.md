@@ -10,6 +10,9 @@
 ## Part 2
 (Verification of De Morgan's laws of function f(c,b,a) )
 
+### Link to my EDA playground example :
+[De Morgan's laws ]https://www.edaplayground.com/x/mR3s
+
 ### Listing of VHDL code of  - architecture :
 ```
 architecture dataflow of gates is
@@ -20,3 +23,14 @@ begin
 
 end architecture dataflow;
 ```
+### Table of function values of set variables
+| **c** | **b** |**a** | **f(c,b,a)** |
+| :-: | :-: | :-: | :-: |
+| 0 | 0 | 0 | 1 |
+| 0 | 0 | 1 | 1 |
+| 0 | 1 | 0 | 0 |
+| 0 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 0 |
+| 1 | 0 | 1 | 1 |
+| 1 | 1 | 0 | 0 |
+| 1 | 1 | 1 | 0 |
