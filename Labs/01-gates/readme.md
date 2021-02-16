@@ -34,3 +34,7 @@ end architecture dataflow;
 | 1 | 0 | 1 | 1 |
 | 1 | 1 | 0 | 0 |
 | 1 | 1 | 1 | 0 |
+
+### Screenshot with simulated time waveforms of f, fnand, fnor to see that it matches
+![Screenshot of time waveforms](images/DeMorganslaw.png)
+
