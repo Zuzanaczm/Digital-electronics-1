@@ -1,1 +1,1 @@
-#ahojjj
+# Zuzana Czmelová - Lab assignment 1
