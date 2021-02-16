@@ -11,7 +11,7 @@
 (Verification of De Morgan's laws of function f(c,b,a) )
 
 ### Link to my EDA playground example :
-[De Morgan's laws ]https://www.edaplayground.com/x/mR3s
+[De Morgan's laws](https://www.edaplayground.com/x/mR3s)
 
 ### Listing of VHDL code of  - architecture :
 ```
