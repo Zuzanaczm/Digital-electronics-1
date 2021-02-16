@@ -38,3 +38,22 @@ end architecture dataflow;
 ### Screenshot with simulated time waveforms 
 ![Screenshot of time waveforms](images/DeMorganslaw.png)
 
+## Part 3 
+(Verification of Distributive laws)
+
+### Link to my EDA playground example :
+[Distributive laws](https://www.edaplayground.com/x/hnqU)
+
+```
+architecture dataflow of gates is
+begin
+    a_o <= (x_i and y_i) or (x_i and z_i);
+    b_o <= x_i and (y_i or z_i);
+    c_o <= (x_i or y_i) and (x_i or z_i);
+    d_o <= x_i or (y_i and z_i);
+
+end architecture dataflow;
+``` 
+
+### Screenshot with simulated time waveforms (if functions a=b and c=d)
+![Screenshot of time waveforms](images/Distributivelaws.png)
