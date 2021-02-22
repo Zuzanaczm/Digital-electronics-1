@@ -22,3 +22,12 @@
 | 13 | 1 1 | 0 1 | 1 | 0 | 0 |
 | 14 | 1 1 | 1 0 | 1 | 0 | 0 |
 | 15 | 1 1 | 1 1 | 0 | 1 | 0 |
+
+
+## Part 2 - A 2-bit comparator 
+
+![K-Map, B = A](images/B=A.png)
+
+![K-Map, B > A](images/B_greaterthan_A.png)
+
+![K-Map, B < A](images/A_greaterthan_B.png)
