@@ -31,3 +31,6 @@
 ![K-Map, B > A](images/B_greaterthan_A.png)
 
 ![K-Map, B < A](images/A_greaterthan_B.png)
+
+
+## Part 3 - A 4-bit comparator
