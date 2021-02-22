@@ -39,7 +39,7 @@
 [My EDA Playground](https://www.edaplayground.com/x/kXdB)
 
 ### Design
-```
+```vhdl
 -- Entity declaration for 4-bit binary comparator
 
 entity comparator_4bit is
@@ -67,7 +67,7 @@ end architecture Behavioral;
 ```
 
 ### Stimulus process from testbench file (testbench.vhd)
-```
+```vhdl
 library ieee;
 use ieee.std_logic_1164.all;
 
