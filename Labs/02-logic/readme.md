@@ -205,3 +205,5 @@ begin
 
 end architecture testbench;
 ```
+### Console output 
+![Intentional error message](images/error.png)
