@@ -75,6 +75,14 @@ p_stimulus : process
 
 ### A) Creating a project
 
-**1.First step 
-![](images/0.png)
+**1.step **
 
+![](images/0.png)
+**2.step **
+
+![](images/1.png)
+![](images/2.png)
+![](images/2_1.png)
+![](images/3.png)
+![](images/4.png)
+![](images/5.png)
