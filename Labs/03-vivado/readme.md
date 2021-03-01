@@ -67,3 +67,6 @@ p_stimulus : process
         wait;
     end process p_stimulus;
 ```
+
+**Screenshot with simulated time waveforms**
+![Waveforms](images/waveforms.png)
