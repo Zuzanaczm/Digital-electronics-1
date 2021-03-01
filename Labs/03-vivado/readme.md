@@ -78,6 +78,7 @@ p_stimulus : process
 **1.step **
 
 ![](images/0.png)
+
 **2.step **
 
 ![](images/1.png)
