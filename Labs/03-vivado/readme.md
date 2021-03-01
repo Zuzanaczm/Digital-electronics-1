@@ -99,6 +99,8 @@ p_stimulus : process
 ![](images/12.png)
 ![](images/13.png)
 ![](images/14.png)
+
+### D) Running a simulation
 ![](images/15.png)
 
 
