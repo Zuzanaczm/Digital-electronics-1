@@ -7,7 +7,7 @@
 ```
 Table with pin connections:
 **Switches** | **Pins** | 
-| :-: | :-: |                                 
+| ------ | ---------- |                                 
 | 00 | J15 |                            LED 00  H17
 | 01 | L16 |                            LED 01  K15
 | 02 | M13 |                            LED 02  J13
