@@ -75,17 +75,19 @@ p_stimulus : process
 
 ### A) Creating a project
 
-#### 1.
+#### 1.Create a project
+![](images/0.png)
+#### 2.Project name
 ![](images/1.png)
-#### 2.
+#### 2.Project type
 ![](images/2.png)
-#### 3.
+#### 3. Adding constraints (optional - in Part D)
 ![](images/2_1.png)
-#### 4.
+#### 4. Adding sources ( in Part B too)
 ![](images/3.png)
-#### 5.
+#### 5.Default part
 ![](images/4.png)
-#### 6.
+#### 6. New project summary
 ![](images/5.png)
 
 ### B) Adding source file 
