@@ -75,11 +75,17 @@ p_stimulus : process
 
 ### A) Creating a project
 
+#### 1.
 ![](images/1.png)
+#### 2.
 ![](images/2.png)
+#### 3.
 ![](images/2_1.png)
+#### 4.
 ![](images/3.png)
+#### 5.
 ![](images/4.png)
+#### 6.
 ![](images/5.png)
 
 ### B) Adding source file 
