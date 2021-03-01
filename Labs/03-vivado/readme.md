@@ -4,7 +4,7 @@
 
 ## Part 1 - Table with connection of 16 slide switches and 16 LEDs on Nexys A7 board
 
-```
+
 Table with pin connections:
 **Switches** | **Pins** | 
 | ------ | ---------- |                                 
@@ -24,4 +24,9 @@ Table with pin connections:
 | 13 | U12 |                            LED 13  V14
 | 14 | U11 |                            LED 14  V12
 |15  |V10  |                            LED 15  V11
-```
+
+
+First Header | Second Header
+------------ | -------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
