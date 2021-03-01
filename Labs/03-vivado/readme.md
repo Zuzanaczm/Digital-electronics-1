@@ -75,10 +75,26 @@ p_stimulus : process
 
 ### A) Creating a project
 
-![](images/0.png)
 ![](images/1.png)
 ![](images/2.png)
 ![](images/2_1.png)
 ![](images/3.png)
 ![](images/4.png)
 ![](images/5.png)
+
+### B) Adding source file 
+![](images/6.png)
+![](images/7.png)
+![](images/8.png)
+![](images/9.png)
+
+### C) Adding testbench file 
+-- firstly, you click ALT+A like in previous part (=adding source file)
+
+![](images/10.png)
+![](images/11.png)
+![](images/9.png)
+
+
+
+
