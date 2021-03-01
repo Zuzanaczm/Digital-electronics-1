@@ -91,21 +91,29 @@ p_stimulus : process
 ![](images/5.png)
 
 ### B) Adding source file 
+#### 1. Add sources
 ![](images/6.png)
+#### 2. Choose design sources
 ![](images/7.png)
+#### 3. Add or create design sources
 ![](images/8.png)
+#### 4. Define module
 ![](images/9.png)
 
 ### C) Adding testbench file 
--- firstly, you click ALT+A like in previous part (=adding source file)
+**firstly, you click ALT+A for adding sources like in previous part (=adding source file)**
 
+#### 1. Choose simulation sources 
 ![](images/10.png)
+#### 2. Add or create simulation sources
 ![](images/11.png)
 
 ### D) Adding XDC constraints file
-
+#### 1. Choose "add or create constraints"
 ![](images/12.png)
+#### 2. Naming constraints file
 ![](images/13.png)
+#### 3. Checking if it is added 
 ![](images/14.png)
 
 ### D) Running a simulation
