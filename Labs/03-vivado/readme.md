@@ -93,7 +93,13 @@ p_stimulus : process
 
 ![](images/10.png)
 ![](images/11.png)
-![](images/9.png)
+
+### D) Adding XDC constraints file
+
+![](images/12.png)
+![](images/13.png)
+![](images/14.png)
+![](images/15.png)
 
 
 
