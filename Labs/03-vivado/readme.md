@@ -23,3 +23,18 @@
 13| U12|13|V14
 14|  U11 |14|V12
 15|V10| 15|V11  
+
+## Part 2 - Two-bit wide 4-to-1 multiplexer
+
+**Listing of VHDL architecture from source file mux_2bit_4to1.vhd**
+```vhdl
+architecture Behavioral of mux_2bit_4to1 is
+begin
+
+       f_o  <= a_i when (sel_i = "00") else
+               b_i when (sel_i = "01") else
+               c_i when (sel_i = "10") else
+               d_i;
+
+end architecture Behavioral;
+```
