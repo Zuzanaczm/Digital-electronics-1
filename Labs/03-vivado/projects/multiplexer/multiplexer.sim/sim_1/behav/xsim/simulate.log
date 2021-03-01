@@ -1,0 +1,6 @@
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_mux2bit_4to1/p_stimulus  File: C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/03-vivado/multiplexer/multiplexer.srcs/sim_1/new/tb_mux2bit_4to1.vhd
+Note: Stimulus process finished
+Time: 160 ns  Iteration: 0  Process: /tb_mux2bit_4to1/p_stimulus  File: C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/03-vivado/multiplexer/multiplexer.srcs/sim_1/new/tb_mux2bit_4to1.vhd
