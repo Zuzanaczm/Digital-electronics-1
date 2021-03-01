@@ -38,3 +38,32 @@ begin
 
 end architecture Behavioral;
 ```
+
+**Listing of VHDL stimulus process from testbench file tb_mux_2bit_4to1.vhd**
+```vhdl
+p_stimulus : process
+    begin
+       
+        report "Stimulus process started" severity note;
+       s_d <= "00"; s_c <= "00"; s_b <= "00"; s_a <= "00" ;
+       s_sel <= "00" ; wait for 10ns; 
+
+       s_d <= "10"; s_c <= "01"; s_b <= "01"; s_a <= "00" ;
+       s_sel <= "00" ; wait for 10ns; 
+        
+       s_d <= "10"; s_c <= "01"; s_b <= "01"; s_a <= "11" ;
+       s_sel <= "00" ; wait for 10ns; 
+       
+       s_d <= "10"; s_c <= "01"; s_b <= "01"; s_a <= "00" ;
+       s_sel <= "01" ; wait for 10ns; 
+       
+        s_d <= "10"; s_c <= "01"; s_b <= "11"; s_a <= "00" ;
+       s_sel <= "10" ; wait for 10ns; 
+       
+       s_d <= "10"; s_c <= "01"; s_b <= "11"; s_a <= "00" ;
+       s_sel <= "11" ; wait for 10ns; 
+       
+        report "Stimulus process finished" severity note;
+        wait;
+    end process p_stimulus;
+```
