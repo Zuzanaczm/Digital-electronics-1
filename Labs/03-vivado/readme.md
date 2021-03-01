@@ -70,3 +70,11 @@ p_stimulus : process
 
 **Screenshot with simulated time waveforms**
 ![Waveforms](images/waveforms.png)
+
+## Part 3 - A Vivado tutorial
+
+### A) Creating a project
+
+**1.First step 
+![](images/0.png)
+
