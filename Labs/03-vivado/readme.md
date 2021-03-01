@@ -5,10 +5,21 @@
 ## Part 1 - Table with connection of 16 slide switches and 16 LEDs on Nexys A7 board
 
 
-### Table with pin connections:
-
-**Switches | Pins
+**Switches** | **Pins**
 ------------ | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
-
+00 | J15
+01 | L16 
+02 |  M13
+03 | R15 
+04| R17
+05| T18
+06| U18
+07| R13 
+08| T8    
+09| U8    
+10| R16
+11| T13 
+12| H6 
+13| U12
+14|  U11 
+15|V10
