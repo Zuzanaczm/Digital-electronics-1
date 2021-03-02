@@ -25,7 +25,7 @@ https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/03-vivado
 14|  U11 |14|V12
 15|V10| 15|V11  
 
-https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
+https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc
 
 ## Part 2 - Two-bit wide 4-to-1 multiplexer
 
