@@ -3,7 +3,7 @@
 [GitHub repository - 03_vivado](https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/03-vivado)
 
 ## Part 1 - Table with connection of 16 slide switches and 16 LEDs on Nexys A7 board
-
+**Notice : LEDs are active-high = LEDs are switched with logic value 1
 
 **Switches** | **Pins** | **LEDs** | **Pins**
 ------------ | ---------- | -------| ------
@@ -23,6 +23,8 @@
 13| U12|13|V14
 14|  U11 |14|V12
 15|V10| 15|V11  
+
+[Link to Nexys-A7-50T](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc)
 
 ## Part 2 - Two-bit wide 4-to-1 multiplexer
 
