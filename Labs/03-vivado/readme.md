@@ -4,7 +4,7 @@
 
 ## Part 1 - Table with connection of 16 slide switches and 16 LEDs on Nexys A7 board
 
-**Notice : LEDs are active-high = LEDs are switched with logic value 1**
+**Notice : LEDs are active-high = they are switched with logic value 1**
 
 **Switches** | **Pins** | **LEDs** | **Pins**
 ------------ | ---------- | -------| ------
