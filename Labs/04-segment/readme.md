@@ -16,7 +16,7 @@
 | 9 | 1001     | 0  | 0  | 0  | 0  | 1  |  0 | 0  |
 | A | 1010     | 0  | 0 | 0  |  1 | 0  |  0 | 0  |
 | b | 1011     | 1  | 1  | 0  |  0 |  0 | 0  | 0  |
-| C | 1100     |  1 |  0 | 0 | 1 |  1 | 1 | 0  |
+| C | 1100     |  0 |  1 | 1 | 0 |  0 | 0 | 1  |
 | d | 1101     |  1 |  0 |0  | 0  |  0 | 1  | 0  |
 | E | 1110 | 0 | 1 | 1 | 0 | 0 | 0 | 0 |
 | F | 1111 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
@@ -69,7 +69,7 @@ begin
                 seg_o <= "1100000";
                 
             when "1100" =>            --C
-                seg_o <= "1001110";
+                seg_o <= "0110001";
                 
             when "1101" =>             --d
                 seg_o <= "1000010";
@@ -120,6 +120,26 @@ p_stimulus : process
        s_hex <= "1000"; 
        wait for 100ns ;
    
+        s_hex <= "1001"; 
+        wait for 100ns ;
+        
+       s_hex <= "1010"; 
+       wait for 100ns ;
+     
+       s_hex <= "1011"; 
+       wait for 100ns ;
+       
+       s_hex <= "1100"; 
+        wait for 100ns ;
+        
+       s_hex <= "1101"; 
+       wait for 100ns ;
+     
+       s_hex <= "1110"; 
+       wait for 100ns ;
+       
+        s_hex <= "1111"; 
+       wait for 100ns ;
        
        report "Stimulus process finished" severity note;
         wait;
