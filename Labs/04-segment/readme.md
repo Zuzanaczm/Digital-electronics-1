@@ -149,3 +149,4 @@ p_stimulus : process
  ### C) Screenshot of simulation 
  ![](images/simulation.png)
  
+## Part 3 - LED(7:4) indicators
