@@ -145,3 +145,7 @@ p_stimulus : process
         wait;
     end process p_stimulus;
   ```
+  
+ ### C) Screenshot of simulation 
+ ![](images/simulation.png)
+ 
