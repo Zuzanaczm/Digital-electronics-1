@@ -1,4 +1,6 @@
 
+# Lab assignment - Zuzana Czmelová (04-segment)
+## Part 1 - Truth table
 
 | **Hex** | **Input** | **A** | **B** | **C** | **D** | **E** | **F** | **G** |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
