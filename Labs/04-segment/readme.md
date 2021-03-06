@@ -34,6 +34,8 @@ AN7 => U13                     DP => H15
 ```
 Both anode and cathode signals are active-low.
 
+## Part 2 - Seven-segment display decoder
+
 ### A) VHDL design source
 ```vhdl
 architecture Behavioral of hex_7seg is
