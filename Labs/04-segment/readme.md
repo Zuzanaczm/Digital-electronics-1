@@ -182,4 +182,4 @@ begin
  
  ```
 
-
+## Part 3 - LED (7:4) indicators
