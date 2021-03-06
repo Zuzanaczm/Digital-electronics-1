@@ -22,7 +22,7 @@
 | F | 1111 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
 
 ## Connection of 7-segment display on Nexys board
-
+```
 AN0 => J17                     CA => T10
 AN1 => J18                     CB => R10
 AN2 => T9                      CC => K16
@@ -31,7 +31,7 @@ AN4 => P14                     CE => P15
 AN5 => T14                     CF => T11
 AN6 => K2                      CG => L18
 AN7 => U13                     DP => H15
-
+```
 Both anode and cathode signals are active-low.
 
 ### A) VHDL design source
