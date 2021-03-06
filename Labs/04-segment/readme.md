@@ -161,12 +161,11 @@ p_stimulus : process
  
 ### D) VHDL code from TOP.vhd
  ```vhdl
--- Instance (copy) of hex_7seg entity
-
 architecture Behavioral of top is
 
 begin
 
+-- Instance (copy) of hex_7seg entity
     hex2seg : entity work.hex_7seg
         port map
         (
