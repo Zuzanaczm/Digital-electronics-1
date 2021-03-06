@@ -159,7 +159,7 @@ p_stimulus : process
  ### C) Screenshot of simulation 
  ![](images/simulation.png)
  
-### B) VHDL code from TOP.vhd
+### D) VHDL code from TOP.vhd
  ```vhdl
 entity top is
     Port ( 
