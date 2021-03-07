@@ -21,7 +21,7 @@
 | E | 1110 | 0 | 1 | 1 | 0 | 0 | 0 | 0 |
 | F | 1111 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
 
-## Connection of 7-segment display on Nexys board
+### Connection of 7-segment display on Nexys board
 ```
 AN0 => J17                     CA => T10
 AN1 => J18                     CB => R10
