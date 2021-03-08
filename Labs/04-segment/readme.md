@@ -271,4 +271,4 @@ end Behavioral;
  ```
  
  ### C) Screenshot of simulation 
- 
+  ![](images/sim.png)
