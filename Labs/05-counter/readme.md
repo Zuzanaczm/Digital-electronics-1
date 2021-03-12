@@ -24,4 +24,4 @@ BTNC => N17
 
  **Connections are active-high.** 
 
-## Part 2 -  VHDL code for clock enable
+## Part 2 -  Bidirectional counter
