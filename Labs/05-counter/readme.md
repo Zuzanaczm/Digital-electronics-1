@@ -160,5 +160,8 @@ hex2seg : entity work.hex_7seg
 
 ### B) Images of the top layer including both counters
 
+**4-bit bidirectional counter**
 ![](images/1.png)
+
+**16-bit bidirectional counter**
 ![](images/2.png)
