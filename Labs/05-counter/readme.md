@@ -105,3 +105,5 @@ begin
     wait;
 end process p_stimulus;
 ```
+### C) Screenshot of simulation 
+
