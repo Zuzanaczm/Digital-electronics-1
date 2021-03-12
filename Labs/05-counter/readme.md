@@ -106,4 +106,4 @@ begin
 end process p_stimulus;
 ```
 ### C) Screenshot of simulation 
-
+![](Images/sim1.png)
