@@ -12,8 +12,9 @@
    | 1&nbsp;sec | 100 000 000 | `x"5F5_E100"` | `b"0101_1111_0101_1110_0001_0000_0000"` |
    
    
+*Pin connections:
+
 ```table
-5 Buttons to 5 pins board connection:
 BTNL => P17
 BTNR => M17
 BTNU => M18
@@ -21,4 +22,4 @@ BTND => P18
 BTNC => N17
 ```
 
- **Connections are active-high. **
+ **Connections are active-high. 
