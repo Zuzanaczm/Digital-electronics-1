@@ -1,6 +1,6 @@
 # Lab assignment - Zuzana Czmelová (binary counter)
 
-## PART 1 -  Pin connections & table 
+## Part 1 -  Pin connections & table 
 
 | **Time interval** | **Number of clk periods** | **Number of clk periods in hex** | **Number of clk periods in binary** |
    | :-: | :-: | :-: | :-: |
@@ -23,3 +23,5 @@ BTNC => N17
 ```
 
  **Connections are active-high.** 
+
+## Part 2 -  VHDL code for clock enable
