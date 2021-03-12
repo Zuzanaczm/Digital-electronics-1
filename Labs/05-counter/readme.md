@@ -12,7 +12,7 @@
    | 1&nbsp;sec | 100 000 000 | `x"5F5_E100"` | `b"0101_1111_0101_1110_0001_0000_0000"` |
    
    
-*Pin connections:
+*Pin connections:*
 
 ```table
 BTNL => P17
@@ -22,4 +22,4 @@ BTND => P18
 BTNC => N17
 ```
 
- **Connections are active-high. 
+ **Connections are active-high.** 
