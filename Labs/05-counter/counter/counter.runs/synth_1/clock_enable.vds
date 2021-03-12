@@ -1,0 +1,316 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Mar 12 19:33:25 2021
+# Process ID: 29820
+# Current directory: C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.runs/synth_1
+# Command line: vivado.exe -log clock_enable.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clock_enable.tcl
+# Log file: C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.runs/synth_1/clock_enable.vds
+# Journal file: C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source clock_enable.tcl -notrace
+Command: synth_design -top clock_enable -part xc7a50ticsg324-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a50ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50ti'
+INFO: [Device 21-403] Loading part xc7a50ticsg324-1L
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 44020
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'clock_enable' [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/sources_1/new/clock_enable.vhd:35]
+	Parameter g_MAX bound to: 10 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'clock_enable' (1#1) [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/sources_1/new/clock_enable.vhd:35]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1004.438 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc]
+WARNING: [Vivado 12-584] No ports matched 'CLK100MHZ'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[0]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[0]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:30]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:30]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[1]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[2]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:32]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:32]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[3]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[4]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[5]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[6]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[7]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[8]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[9]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[10]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[11]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[12]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[13]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[14]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED[15]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CA'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CB'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CC'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CD'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:59]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:59]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CE'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CF'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CG'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'DP'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[0]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[1]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[2]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[3]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[4]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:68]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:68]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[5]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[6]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[7]'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:71]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:71]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'BTNC'. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:75]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc:75]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.srcs/constrs_1/new/Nexys_A7_50T.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1004.438 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a50ticsg324-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:36 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:01:00 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:01:00 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:51 ; elapsed = 00:01:00 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:51 ; elapsed = 00:01:00 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:01:00 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:51 ; elapsed = 00:01:00 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     8|
+|3     |LUT1   |     1|
+|4     |LUT4   |     7|
+|5     |LUT5   |     2|
+|6     |LUT6   |     1|
+|7     |FDRE   |    32|
+|8     |IBUF   |     2|
+|9     |OBUF   |     1|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:51 ; elapsed = 00:01:00 . Memory (MB): peak = 1004.438 ; gain = 0.000
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:00:56 . Memory (MB): peak = 1004.438 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:52 ; elapsed = 00:01:00 . Memory (MB): peak = 1004.438 ; gain = 0.000
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1004.438 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1007.168 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+16 Infos, 35 Warnings, 35 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:05 ; elapsed = 00:01:38 . Memory (MB): peak = 1007.168 ; gain = 2.730
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/05-counter/counter/counter.runs/synth_1/clock_enable.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file clock_enable_utilization_synth.rpt -pb clock_enable_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 12 19:35:16 2021...
