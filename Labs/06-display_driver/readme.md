@@ -1,7 +1,7 @@
 # Lab assignment - Zuzana Czmelová (06-display driver)
 
 ## Part 1 - Timing diagram figure for displaying value 3.142
-![](images/s.png)
+![](images/wavedrom.png)
 
 ## Part 2 - Display driver
 
@@ -173,7 +173,7 @@ end architecture testbench;
 ```
 
 ### C) Screenshot with simulated time waveforms
-
+![](images/sim.png)
 ### D) Listing of VHDL architecture of the top layer
 ```vhdl
 architecture Behavioral of top is
