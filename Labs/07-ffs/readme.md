@@ -32,3 +32,5 @@
    | 0 | 1 | 1 | No change |
    | 1 | 0 | 1 | Invert |
    | 1 | 1 | 0 | Invert |
+
+## Part 2 - VHDL code for D latch
