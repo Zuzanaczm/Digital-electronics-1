@@ -33,6 +33,9 @@
    | 1 | 0 | 1 | Invert |
    | 1 | 1 | 0 | Invert |
 
+
+![Images](images/vzorce.png)
+
 ## Part 2 - VHDL code for D latch
 
 ### A) VHDL code of design source
