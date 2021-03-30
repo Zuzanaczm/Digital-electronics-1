@@ -602,3 +602,5 @@ end process p_stimulus;
 
 
 ## Part 4 - Image of the shift register 
+
+![Images](images/4.png)
