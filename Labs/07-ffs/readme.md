@@ -146,5 +146,126 @@ end process p_stimulus;
 
 ### C) Screenshot with simulated time waveforms
 
+![Images](images/sim_latch.png)
 
 ## Part 3 - Flip-flops
+
+### A) VHDL code listing of the processes 
+
+#### A1) p_d_ff_arst 
+```vhdl
+p_d_ff_arst : process(clk, arst)
+begin     
+
+         if (arst = '1') then        
+              q     <= '0';
+              q_bar <= '1';
+              
+         elsif rising_edge(clk) then       
+              q     <= d;
+              q_bar <= not d;    
+         end if;    
+            
+end process p_d_ff_arst;
+```
+```vhdl
+   p_clk_gen : process
+    begin
+        while now < 750 ns loop         -- 75 periods of 100MHz clock
+            s_clk_100MHz <= '0';
+            wait for c_CLK_100MHZ_PERIOD / 2;
+            s_clk_100MHz <= '1';
+            wait for c_CLK_100MHZ_PERIOD / 2;
+        end loop;
+        wait;
+    end process p_clk_gen;
+    
+    p_reset_gen : process
+    begin
+        s_arst <= '0';
+        wait for 53ns;
+        
+        s_arst <= '1';
+        wait for 5ns;
+        
+        s_arst <= '0';
+        
+        wait for 14ns;
+        s_arst <= '1';
+        
+        wait for 30ns;
+        s_arst <= '0';
+        
+        wait for 45ns;
+        s_arst <= '1';
+        
+        wait for 30ns;
+        s_arst <= '0';
+        
+        wait;
+    end process p_reset_gen;
+
+     p_stimulus : process
+    begin
+        report "Stimulus process started" severity note;
+        s_d  <= '0';
+        
+        wait for 10ns;
+        s_d  <= '1';
+        wait for 10ns;
+        s_d  <= '0';
+        wait for 10ns;
+        s_d  <= '1';
+        wait for 10ns;
+        s_d  <= '0';
+        wait for 10ns;
+        s_d  <= '1';
+        wait for 10ns;
+        s_d  <= '0';
+        wait for 10ns;
+        
+        wait for 3ns;
+        assert(s_d = '0' and  s_arst = '1' and s_q = '0')
+        report "Test failed for input combination: d='0', arst='1', s_q = '0'." severity error;
+        
+        wait for 7ns;
+        s_d  <= '1';
+        wait for 10ns;
+        s_d  <= '0';
+        wait for 10ns;
+        s_d  <= '1';
+        
+        wait for 3ns;
+        assert(s_d = '1' and  s_arst = '0' and s_q = '0')
+        report "Test failed for input combination: d='1', arst='0', s_q = '0'." severity error;
+        
+        wait for 7ns;
+        s_d  <= '0';
+        wait for 10ns;
+        s_d  <= '1';
+        wait for 10ns;
+        s_d  <= '0';
+        wait for 10ns;
+        
+        wait for 3ns;
+        assert(s_d = '0' and  s_arst = '0' and s_q = '0')
+        report "Test failed for input combination: d='0', arst='0', s_q='0'." severity error;
+        
+        wait for 7ns;
+        s_d  <= '1';
+        wait for 10ns;
+        
+        s_d  <= '0';
+        wait for 10ns;
+        s_d  <= '1';
+        
+        wait for 3ns;
+        assert(s_d = '1' and  s_arst = '1' and s_q = '0')
+        report "Test failed for input combination: d='1', arst='1', s_q='0'." severity error;
+        
+        report "Stimulus process finished" severity note;
+        wait;
+    end process p_stimulus;
+```
+
+
