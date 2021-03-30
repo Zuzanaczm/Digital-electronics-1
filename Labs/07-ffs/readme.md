@@ -142,3 +142,6 @@ end process p_stimulus;
 ```
 
 ### C) Screenshot with simulated time waveforms
+
+
+## Part 3 - Flip-flops
