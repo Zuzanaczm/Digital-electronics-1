@@ -152,7 +152,7 @@ end process p_stimulus;
 
 ### A) VHDL code listing of the processes 
 
-#### A1) p_d_ff_arst - design source and testbench
+#### A1) p_d_ff_arst - design source and testbench (D type flip-flop with an async reset)
 ```vhdl
 p_d_ff_arst : process(clk, arst)
 begin     
@@ -272,7 +272,7 @@ end process p_d_ff_arst;
 **Screenshot of simulated time waveforms** 
 ![](images/d_ff_arst.png)
 
-#### A2) p_d_ff_rst - design source and testbench
+#### A2) p_d_ff_rst - design source and testbench (D type flip-flop with an sync reset)
 ```vhdl
 p_d_ff_rst : process(clk)
 begin     
