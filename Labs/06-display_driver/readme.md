@@ -224,3 +224,4 @@ begin
 end Behavioral;
 ```
 ## Part 3 - Eight-digit driver 
+![](images/eight_digit_driver.png)
