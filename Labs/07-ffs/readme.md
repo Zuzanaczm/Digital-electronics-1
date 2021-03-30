@@ -86,87 +86,62 @@ p_stimulus : process
 begin
     report "Stimulus process started" severity note;
 
-    -- Enable latch
     s_en     <= '1';
-    
-    -- Output change
+   
     s_d <= '1';
     wait for 50 ns;       
-    
-    s_d <= '0';
-    wait for 50 ns;
-    
-    s_d <= '1';
-    wait for 50 ns;
-    
     s_d <= '0';
     wait for 50 ns; 
-       
+    s_d <= '1';
+    wait for 50 ns;  
+    s_d <= '0';
+    wait for 50 ns;     
     s_d <= '1';
     wait for 50 ns;
 
-    -- Expected output
     assert ((s_q = '1') and (s_q_bar = '0' ))
     -- If false, then report an error
     report "Test failed for input: '1' " severity error;
         
     s_d <= '0';
     wait for 50 ns;
-
     s_d <= '1';
     wait for 50 ns;
-    
     s_d <= '0';
-    wait for 50 ns;
-    
+    wait for 50 ns;;   
     s_d <= '1';
     wait for 50 ns;
-    
-    s_d <= '0';
+     s_d <= '0';
     wait for 50 ns;
-    --500ns
+  
     
-    -- Expected output
+    
     assert ((s_q = '0') and (s_q_bar = '1' ))
-    -- If false, then report an error
     report "Test failed for input: '0' " severity error;
     
     s_d <= '1';
-    wait for 25 ns;
-    
-    -- Disable latch
+    wait for 25 ns; 
     s_en     <= '0';
-    wait for 25 ns;
-        
-    s_d <= '0';
-    wait for 50 ns;
-    
-    s_d <= '1';
-    wait for 50 ns;
-    
+    wait for 25 ns;     
     s_d <= '0';
     wait for 50 ns; 
-       
+    s_d <= '1';
+    wait for 50 ns   
+    s_d <= '0';
+    wait for 50 ns;     
     s_d <= '1';
     wait for 25 ns;
     
-    -- Enable latch
     s_en     <= '1';
     wait for 25 ns;
-    
-    -- Output change
     s_d <= '0';
     wait for 50 ns;
-    
-    s_d <= '1';
+     s_d <= '1';
     wait for 50 ns;
-    
-    s_d <= '0';
-    wait for 50 ns;
-    
+     s_d <= '0';
+    wait for 50 ns;  
     s_d <= '1';
-    wait for 50 ns; 
-       
+    wait for 50 ns;     
     s_d <= '0';
     wait for 50 ns;
     
