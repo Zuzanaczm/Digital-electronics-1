@@ -55,28 +55,20 @@ p_reset_gen : process
 begin
     s_arst <= '1';
     wait for 50 ns;
-    
     s_arst <= '0';
     wait for 75 ns;
-    
     s_arst <= '1';
     wait for 100 ns;
-    
     s_arst <= '0';
     wait for 275 ns;        
-    
     s_arst <= '0';
     wait for 150 ns;
-    
     s_arst <= '1';
     wait for 50 ns;
-    
     s_arst <= '0';
     wait for 100 ns;
-    
-    s_arst <= '1';
-    wait for 20 ns;
-    
+     s_arst <= '1';
+    wait for 20 ns; 
     s_arst <= '0';
     wait for 200 ns;  
 end process p_reset_gen;
@@ -87,7 +79,6 @@ begin
     report "Stimulus process started" severity note;
 
     s_en     <= '1';
-   
     s_d <= '1';
     wait for 50 ns;       
     s_d <= '0';
