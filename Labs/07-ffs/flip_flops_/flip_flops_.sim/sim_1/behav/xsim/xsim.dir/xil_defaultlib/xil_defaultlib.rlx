@@ -1,0 +1,14 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/07-ffs/flip_flops_/flip_flops_.srcs/sim_1/new/tb_d_ff_arst.vhd,1617121901,vhdl,,,,tb_d_ff_arst,,,,,,,,
+C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/07-ffs/flip_flops_/flip_flops_.srcs/sim_1/new/tb_d_ff_rst.vhd,1617122649,vhdl,,,,tb_d_ff_rst,,,,,,,,
+C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/07-ffs/flip_flops_/flip_flops_.srcs/sim_1/new/tb_d_latch.vhd,1617120815,vhdl,,,,tb_d_latch,,,,,,,,
+C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/07-ffs/flip_flops_/flip_flops_.srcs/sim_1/new/tb_jk_ff_rst.vhd,1617122910,vhdl,,,,tb_jk_ff_rst,,,,,,,,
+C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/07-ffs/flip_flops_/flip_flops_.srcs/sim_1/new/tb_t_ff_rst.vhd,1617123414,vhdl,,,,tb_t_ff_rst,,,,,,,,
+C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/07-ffs/flip_flops_/flip_flops_.srcs/sources_1/new/d_ff_arst.vhd,1617121915,vhdl,C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/07-ffs/flip_flops_/flip_flops_.srcs/sim_1/new/tb_d_ff_arst.vhd,,,d_ff_arst,,,,,,,,
+C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/07-ffs/flip_flops_/flip_flops_.srcs/sources_1/new/d_ff_rst.vhd,1617122650,vhdl,C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/07-ffs/flip_flops_/flip_flops_.srcs/sim_1/new/tb_d_ff_rst.vhd,,,d_ff_rst,,,,,,,,
+C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/07-ffs/flip_flops_/flip_flops_.srcs/sources_1/new/d_latch.vhd,1617120715,vhdl,C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/07-ffs/flip_flops_/flip_flops_.srcs/sim_1/new/tb_d_latch.vhd,,,d_latch,,,,,,,,
+C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/07-ffs/flip_flops_/flip_flops_.srcs/sources_1/new/jk_ff_rst.vhd,1617122911,vhdl,C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/07-ffs/flip_flops_/flip_flops_.srcs/sim_1/new/tb_jk_ff_rst.vhd,,,jk_ff_rst,,,,,,,,
+C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/07-ffs/flip_flops_/flip_flops_.srcs/sources_1/new/t_ff_rst.vhd,1617123415,vhdl,C:/Users/42077/Documents/Zuzana_Czmelova/Digital-electronics-1/Labs/07-ffs/flip_flops_/flip_flops_.srcs/sim_1/new/tb_t_ff_rst.vhd,,,t_ff_rst,,,,,,,,
