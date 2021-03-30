@@ -1,7 +1,7 @@
 # Zuzana Czmelová - Lab assignment (Latches and Flip flops) 
 
 ## Part 1 - Characteristic equations and  truth tables for D, JK, T flip-flops
-**D flip-flop**
+### A) D flip-flop
 
    | **D** | **Qn** | **Q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-- |
@@ -11,7 +11,7 @@
    | 1 | 1 | 1 | No Change |
    
   
-  **JK flip-flop**
+ ### B) JK flip-flop
 
    | **J** | **K** | **Qn** | **Q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-- |
@@ -24,7 +24,7 @@
    | 1 | 1 | 0 | 1 | Toggle |
    | 1 | 1 | 1 | 0 | Toggle |
    
-   **T flip-flop**
+   ### C) T flip-flop
    
    | **T** | **Qn** | **Q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-- |
