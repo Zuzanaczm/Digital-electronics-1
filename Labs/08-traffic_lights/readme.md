@@ -149,4 +149,4 @@ p_traffic_fsm : process(clk)
 ```
 ### D) Screenshots of simulation 
 
-
+## Part 3 - Smart controller 
