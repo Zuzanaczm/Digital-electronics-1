@@ -19,6 +19,7 @@
 ### A) State diagram
 
 ### B) Listing of VHDL code of sequential process p_traffic_fsm
+
 ```vhdl
 p_traffic_fsm : process(clk)
     begin
@@ -110,9 +111,42 @@ p_traffic_fsm : process(clk)
             end if; -- Synchronous reset
         end if; -- Rising edge
     end process p_traffic_fsm;
-    ```
-    
-### C) Listing of VHDL code of combinatorial process p_output_fsm
+```
+### C) Listing of VHDL code of combinatorial process p_output_fsm 
+```vhdl
+ p_output_fsm : process(s_state)
+    begin
+        case s_state is
+            when STOP1 =>
+                south_o <= "100";  --red (RGB- 100)
+                west_o  <= "100";  --red (RGB- 100)
+                
+            when WEST_GO =>
+                south_o <= "100";  --red (RGB- 100)
+                west_o  <= "010";  --green (RGB- 010) 
 
-### D) Screenshots of the simulation
+            when WEST_WAIT =>
+                south_o <= "100";  --red (RGB- 100)
+                west_o  <= "110";  --yelloq (RGB- 110)
+                
+            when STOP2  =>
+                south_o <= "100";  --red (RGB- 100)
+                west_o  <= "100";  --red (RGB- 100)
+                
+            when SOUTH_GO  =>
+                south_o <= "010";  --green (RGB- 010)
+                west_o  <= "100";  --red (RGB- 100)
+                
+            when SOUTH_WAIT =>
+                south_o <= "110";  --yellow(RGB- 100)
+                west_o  <= "100";  --red (RGB- 100)
+
+            when others =>
+                south_o <= c_RED;
+                west_o  <= c_RED;
+        end case;
+    end process p_output_fsm;
+```
+### D) Screenshots of simulation 
+
 
