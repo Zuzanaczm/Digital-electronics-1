@@ -13,6 +13,7 @@
 | LD16 | N15, M16, R12 | `1,0,0` |`1,1,0`  | `0,1,0` |
 | LD17 |N16, R11,G14 | `1,0,0` | `1,1,0` | `0,1,0` |
 
+![](images/connections.png) 
 ![](images/rgb.png) 
 
 ## Part 2 - Traffic light controller 
