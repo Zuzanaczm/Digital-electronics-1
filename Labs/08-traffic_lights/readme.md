@@ -13,10 +13,13 @@
 | LD16 | N15, M16, R12 | `1,0,0` |`1,1,0`  | `0,1,0` |
 | LD17 |N16, R11,G14 | `1,0,0` | `1,1,0` | `0,1,0` |
 
+![](images/rgb.png) 
 
 ## Part 2 - Traffic light controller 
 
 ### A) State diagram
+
+![](images/state_diagram.png)
 
 ### B) Listing of VHDL code of sequential process p_traffic_fsm
 
@@ -148,5 +151,11 @@ p_traffic_fsm : process(clk)
     end process p_output_fsm;
 ```
 ### D) Screenshots of simulation 
+
+![](images/1.png)
+![](images/2.png)
+![](images/3.png)
+![](images/4.png)
+![](images/5.png)
 
 ## Part 3 - Smart controller 
