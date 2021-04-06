@@ -164,12 +164,10 @@ p_traffic_fsm : process(clk)
 
 | **Current state** | **Direction South** | **Direction West** | **Delay** | **sensor state** |
 | :-- | :-: | :-: | :-: | :-: |
-| `STOP1`      | red    | red | 1 sec | sensor_state = `"01"` => next state = `SOUTH_GO`|
- sensor_state = `"00"`, `"11"` ,`"10"` => Next State = `WEST_GO`|
+| `STOP1`      | red    | red | 1 sec | sensor_state = `"01"` => next state = `SOUTH_GO` ; sensor_state = `"00"`; `"11"` ; `"10"` => next state = `WEST_GO`|
 | `WEST_GO`    | red    | green | 4 sec | `WEST_WAIT` |
 | `WEST_WAIT`  | red    | yellow | 2 sec | `STOP2` |
-| `STOP2`      | red    | red | 1 sec | sensor_state = `"10"` => Next State = `WEST_GO` |
-|||||sensor_state = `"00"`, `"11"` ,`"01"` => Next State = `SOUTH_GO`|
+| `STOP2`      | red    | red | 1 sec | sensor_state = `"10"` => next state = `WEST_GO` ; sensor_state = `"00"`; `"11"` ;`"01"` => Next State = `SOUTH_GO` |
 | `SOUTH_GO`   | green  | red | 4 sec | `SOUTH_WAIT` |
 | `SOUTH_WAIT` | yellow | red | 2 sec | `STOP1` |
 
