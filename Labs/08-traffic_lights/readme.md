@@ -162,7 +162,7 @@ p_traffic_fsm : process(clk)
 
 ### A) State table
 
-| **Current state** | **Direction South** | **Direction West** | **Delay** |
+| **Current state** | **Direction South** | **Direction West** | **Delay** | **sensor**  |
 | :-- | :-: | :-: | :-: |
 | `STOP1`      | red    | red | 1 sec |
 | `WEST_GO`    | red    | green | 4 sec |
