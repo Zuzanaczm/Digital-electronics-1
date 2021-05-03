@@ -3,7 +3,7 @@
 ## Team members 
 This project was created by Tereza Beránková,Samuel Blecha,Kryštof Buroň,Šimon Cieslar & Zuzana Czmelová
 
-[Link to yur GitHub project folder]( https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/project)
+[Link to our GitHub project folder]( https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/project)
 
 
 
