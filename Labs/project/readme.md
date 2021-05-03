@@ -3,8 +3,8 @@
 ## Team members 
 This project was created by Tereza Beránková,Samuel Blecha,Kryštof Buroň,Šimon Cieslar & Zuzana Czmelová
 
-[Link to our GitHub project folder]( https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/project)
-
+[Link to  GitHub project folder]( https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/project)
+--doplnit ostatnych rip
 
 ## Project objectives 
 Our aim was to create park assistant with HC-SR04 ultrasonic sensor, sound signaling using PWM, signaling by LED bargraph.
@@ -12,8 +12,10 @@ Our aim was to create park assistant with HC-SR04 ultrasonic sensor, sound signa
 ## Hardware description
 
 ## VHDL modules description and simulations
-1.VHDL design for parking assistant 
-a) process  +komentár
+
+### VHDL design for parking assistant 
+
+A) process  +komentár
 ```vhdl
  --------------------------------------------------------------------
     -- Proces for switching between Left & Center & Right front sensor
@@ -109,7 +111,7 @@ a) process  +komentár
         end if;
     end process p_back_sensor_select;  
  ```
- b) entity + komentár 
+ B) entity + komentár 
  
   ```vhdl
  --------------------------------------------------------------------
@@ -217,7 +219,8 @@ a) process  +komentár
 end Behavioral;
  ```
  
- c) testbench 
+ C) testbench 
+ Konstanty v tomhle testbenchi byly takhle nadefinované  tímhle způsobem - ruzne distnance -> levely 
  
   ```vhdl
   --------------------------------------------------------------------
@@ -340,7 +343,7 @@ end Behavioral;
         s_sensor1_out_i <= '1';
         s_sensor4_out_i <= '1';
         wait for c_dist_5;
-        s_sensor1_out_i <= '0';
+        s_sensor1_out_i <= '0'; 
         s_sensor4_out_i <= '0';
         
         wait for 130 us;
@@ -353,11 +356,15 @@ end Behavioral;
         report "Stimulus process finished" severity note;
         wait;
     end process p_stimulus;
-     ```
-     
- d) screenshot of simulation 
+  ```    
+  
+ D) screenshot of simulation 
  
- 2. 
+
+#### 2.driver
+#### 3. beep beep 
+#### 4. distance comparator 
+#### 5. cnt + mux
  
  
 ## TOP module description and simulations
