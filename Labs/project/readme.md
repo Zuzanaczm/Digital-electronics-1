@@ -15,7 +15,7 @@ Our aim was to create park assistant with HC-SR04 ultrasonic sensor, sound signa
 
 ### VHDL design for parking assistant 
 
-A) process  +komentár
+**A) process  +komentár**
 ```vhdl
  --------------------------------------------------------------------
     -- Proces for switching between Left & Center & Right front sensor
@@ -111,7 +111,7 @@ A) process  +komentár
         end if;
     end process p_back_sensor_select;  
  ```
- B) entity + komentár 
+ **B) entity + komentár**
  
   ```vhdl
  --------------------------------------------------------------------
@@ -219,7 +219,7 @@ A) process  +komentár
 end Behavioral;
  ```
  
- C) testbench 
+**C) testbench** 
  Konstanty v tomhle testbenchi byly takhle nadefinované  tímhle způsobem - ruzne distnance -> levely 
  
   ```vhdl
@@ -358,7 +358,7 @@ end Behavioral;
     end process p_stimulus;
   ```    
   
- D) screenshot of simulation 
+ **D) screenshot of simulation** 
  
 
 #### 2.driver
