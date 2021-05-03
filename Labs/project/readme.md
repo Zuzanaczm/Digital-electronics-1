@@ -12,8 +12,8 @@ Our aim was to create park assistant with HC-SR04 ultrasonic sensor, sound signa
 ## Hardware description
 
 ## VHDL modules description and simulations
-1.Parking assistant 
-
+1.VHDL design for parking assistant 
+a) process  +komentár
 ```vhdl
  --------------------------------------------------------------------
     -- Proces for switching between Left & Center & Right front sensor
@@ -109,6 +109,8 @@ Our aim was to create park assistant with HC-SR04 ultrasonic sensor, sound signa
         end if;
     end process p_back_sensor_select;  
  ```
+ b) entity + komentár 
+ 
   ```vhdl
  --------------------------------------------------------------------
     -- Connecting testbench signals with entities 
@@ -214,6 +216,149 @@ Our aim was to create park assistant with HC-SR04 ultrasonic sensor, sound signa
                            
 end Behavioral;
  ```
+ 
+ c) testbench 
+ 
+  ```vhdl
+  --------------------------------------------------------------------
+    -- Clock generation process
+    --------------------------------------------------------------------
+    p_clk_gen : process
+    begin
+        while now < 100 ms loop         
+            s_clk <= '0';
+            wait for c_CLK_100MHZ_PERIOD / 2;
+            s_clk <= '1';
+            wait for c_CLK_100MHZ_PERIOD / 2;
+        end loop;
+        wait;   
+    end process p_clk_gen;
+    
+    --------------------------------------------------------------------
+    -- Reset generation process
+    --------------------------------------------------------------------
+    p_reset_gen : process
+    begin
+       
+        -- Initial reset activated
+        s_reset <= '1';
+        wait for 100 us;
+    
+        -- Reset deactivated
+        s_reset <= '0';
+        wait for 3 ms;
+        
+        -- Reset activated
+        s_reset <= '1';
+        wait for 100 us;
+    
+        -- Reset deactivated
+        s_reset <= '0';
+    
+        wait;
+    end process p_reset_gen;
+    
+    --------------------------------------------------------------------
+    -- Data generation process
+    --------------------------------------------------------------------
+    p_stimulus : process
+    begin
+        report "Stimulus process started" severity note;
+        
+       --                     --1st block 
+        wait for 180 us;
+        s_sensor0_out_i <= '1';
+        s_sensor3_out_i <= '1';
+        wait for c_dist_0;
+        s_sensor0_out_i <= '0';
+        s_sensor3_out_i <= '0';
+        
+        wait for 180 us;        
+        s_sensor1_out_i <= '1';
+        s_sensor4_out_i <= '1'; 
+        wait for c_dist_0;      
+        s_sensor1_out_i <= '0';
+        s_sensor4_out_i <= '0'; 
+        
+        wait for 100 us;
+        s_sensor2_out_i <= '1';
+        s_sensor5_out_i <= '1';
+        wait for c_dist_0;
+        s_sensor2_out_i <= '0';
+        s_sensor5_out_i <= '0';
+       --                     --2nd block                     
+        wait for 180 us;
+        s_sensor0_out_i <= '1';
+        s_sensor3_out_i <= '1';
+        wait for c_dist_4;
+        s_sensor0_out_i <= '0';
+        s_sensor3_out_i <= '0';
+        
+        wait for 180 us;        
+        s_sensor1_out_i <= '1';
+        s_sensor4_out_i <= '1'; 
+        wait for c_dist_2;      
+        s_sensor1_out_i <= '0';
+        s_sensor4_out_i <= '0'; 
+        
+        wait for 100 us;
+        s_sensor2_out_i <= '1';
+        s_sensor5_out_i <= '1';
+        wait for c_dist_3;
+        s_sensor2_out_i <= '0';
+        s_sensor5_out_i <= '0'; 
+       --                     --3rd block                       
+        wait for 180 us;
+        s_sensor0_out_i <= '1';
+        s_sensor3_out_i <= '1';
+        wait for c_dist_3;
+        s_sensor0_out_i <= '0';
+        s_sensor3_out_i <= '0';
+        
+        wait for 180 us;        
+        s_sensor1_out_i <= '1';
+        s_sensor4_out_i <= '1'; 
+        wait for c_dist_2;      
+        s_sensor1_out_i <= '0';
+        s_sensor4_out_i <= '0'; 
+        
+        wait for 100 us;
+        s_sensor2_out_i <= '1';
+        s_sensor5_out_i <= '1';
+        wait for c_dist_4;
+        s_sensor2_out_i <= '0';
+        s_sensor5_out_i <= '0';
+       --                     --4th block
+        wait for 15 us;
+        s_sensor0_out_i <= '1';
+        s_sensor3_out_i <= '1';
+        wait for c_dist_5;
+        s_sensor0_out_i <= '0';
+        s_sensor3_out_i <= '0';
+       
+        wait for 11 us;
+        s_sensor1_out_i <= '1';
+        s_sensor4_out_i <= '1';
+        wait for c_dist_5;
+        s_sensor1_out_i <= '0';
+        s_sensor4_out_i <= '0';
+        
+        wait for 130 us;
+        s_sensor2_out_i <= '1';
+        s_sensor5_out_i <= '1';
+        wait for c_dist_5;
+        s_sensor2_out_i <= '0';
+        s_sensor5_out_i <= '0';
+
+        report "Stimulus process finished" severity note;
+        wait;
+    end process p_stimulus;
+     ```
+     
+ d) screenshot of simulation 
+ 
+ 2. 
+ 
  
 ## TOP module description and simulations
 
