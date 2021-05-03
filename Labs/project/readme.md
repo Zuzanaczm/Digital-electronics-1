@@ -358,20 +358,166 @@ end Behavioral;
     end process p_stimulus;
   ```    
   
- **D) screenshot of simulation** 
+ **D) Screenshots of simulation** 
  
 
-#### 2.driver
-#### 3. beep beep 
-#### 4. distance comparator 
-#### 5. cnt + mux
- 
+#### 2. UURM Ultimate ultrasonic range meter driver decoder 
+**A) process of URM driver decoder 
+
+  ``` vhdl
+--------------------------------------------------------------------
+    -- Process for sending 10us signal into a sensor & 
+    -- For measuring returning signal
+    --------------------------------------------------------------------
+    p_distance_measurement : process(clk)
+    begin
+        if rising_edge(clk) then
+            if (reset = '1') then         -- Synchronous reset
+                s_state       <= INITIAL; -- Set initial state
+                s_local_cnt   <= 0;       -- Clear all counters
+                update_o      <= '0';     -- Reset update signal
+                sensor_in_o   <= '0';     -- Reset sensor input
+                s_distance    <= 201;     -- Initialize distance
+            else
+                case s_state is  
+                              
+                    when INITIAL =>-- Initial state                                              
+                        if (reset = '0') then
+                            s_state         <= PULSE;     
+                            update_o <= '0';-- Setting mux update to 0                        
+                        end if;
+                        
+                    when PULSE =>-- State for sending 10us pulse     
+                        if (s_local_cnt >= (PULSE_LENGTH - 1)) then
+                            s_local_cnt     <= 0;        -- Clear counter
+                            sensor_in_o     <= '0';      -- Reset output
+                            s_state         <= WAITING;  -- Next state
+                        else -- 10 us counter
+                            s_local_cnt     <= s_local_cnt + 1; 
+                            sensor_in_o     <= '1';      
+                        end if;
+                        
+                    when WAITING =>-- Waiting state for signal returning from sensor
+                        if (sensor_out_i = '1') then 
+                            s_state         <= COUNT; 
+                        end if;
+                        
+                    when COUNT =>-- State for counting the length of returning signal
+                        if (sensor_out_i = '1') then -- Counter
+                            s_local_cnt     <= s_local_cnt + 1;
+                        else -- Dividing s_distance(length) of measured signal by constant 100*58                           
+                            s_distance      <= s_local_cnt /5800;    -- specified by datasheet & 
+                            s_local_cnt     <= 0;                    -- to eliminate efect of clk
+                            update_o        <='1';                   -- to get dist in cm.          
+                            s_state         <= INITIAL;             
+                        end if;                           
+                      
+                    when others =>-- Other states
+                        s_state <= INITIAL;
+        
+                end case;
+            end if; 
+        end if; 
+    end process p_distance_measurement;
+    
+    --------------------------------------------------------------------
+    -- Process for quantization measured signal
+    --------------------------------------------------------------------
+    p_dist_decoder : process(s_distance)
+    begin
+        if   (s_distance <= g_lvl_0) then -- The closest distance
+            dist_lvl_o <= "11";
+        elsif(s_distance <= g_lvl_1) then
+            dist_lvl_o <= "10";
+        elsif(s_distance <= g_lvl_2) then
+            dist_lvl_o <= "01";
+        else                              -- The furthest distance
+            dist_lvl_o <= "00";
+        end if;           
+    end process p_dist_decoder;
+  ```   
+  
+  **B)Testbench**
+  
+  ``` vhdl
+      --------------------------------------------------------------------
+    -- Clock generation process
+    --------------------------------------------------------------------
+    p_clk_gen : process
+    begin
+        while now < 750 ms loop         
+            s_clk <= '0';
+            wait for c_CLK_100MHZ_PERIOD / 2;
+            s_clk <= '1';
+            wait for c_CLK_100MHZ_PERIOD / 2;
+        end loop;
+        wait;                           -- Process is suspended forever
+    end process p_clk_gen;
+    
+    --------------------------------------------------------------------
+    -- Reset generation process
+    --------------------------------------------------------------------
+    p_reset_gen : process
+    begin
+       
+        --Initial reset activated
+        s_reset <= '1';
+        wait for 100 us;
+    
+        -- Reset deactivated
+        s_reset <= '0';
+    
+        wait;
+    end process p_reset_gen;
+    
+    --------------------------------------------------------------------
+    -- Data generation process
+    --------------------------------------------------------------------
+    p_stimulus : process
+    begin
+        report "Stimulus process started" severity note;
+        wait for 500 us;              -- Waiting for inital pulse
+            s_sensor_out_i <= '1';
+        wait for 150 us;              -- "Reciving" distance lesser than lvl_0 distance
+            s_sensor_out_i <= '0';    -- its length is 2.58 cm (150/58)
+        wait for 50 us;               -- Waiting for sending 10us pulse (We have to wait
+            s_sensor_out_i <= '1';    -- at least 10us. Here we wait 50us to be sure.)
+        wait for 3000 us;             -- "Reciving" distance bigger than lvl_0 distance 
+            s_sensor_out_i <= '0';    -- its length is 51.8 cm (3000/58)
+        wait for 50 us;               -- Waiting for sending 10us pulse
+            s_sensor_out_i <= '1';
+        wait for 6000 us;             -- "Reciving" distance bigger than lvl_1 distance 
+            s_sensor_out_i <= '0';    -- its length is 103.4 cm (6000/58)
+        wait for 50 us;               -- Waiting for sending 10us pulse
+            s_sensor_out_i <= '1';
+        wait for 12000 us;            -- "Reciving" distance bigger than lvl_2 distance 
+            s_sensor_out_i <= '0';    -- its length is 206.9 cm (12000/58)
+        wait for 50 us;               -- Waiting for sending 10us pulse
+            s_sensor_out_i <= '1';
+        wait for 24000 us;            -- "Reciving" distance bigger than lvl_2 distance
+            s_sensor_out_i <= '0';    -- its length is 413.8 cm (24000/58)
+        wait for 50 us;
+        report "Stimulus process finished" severity note;
+        wait;
+    end process p_stimulus;
+``` 
+**C) Screenshots of simulation
+
+#### 3. Beep beep generator
+
+#### 4. Distance comparator 
+
+#### 5. cnt_up_down 
+
+#### 6. mux_2bit_6to1
  
 ## TOP module description and simulations
+napojení signálů --> stejný jako PA /medium ,které napojuje piny desky `Arty-A7-100` na ten kód/
 
 ## Video
 
 ## References
-
+--inspo video od Kryštofa
+--soubor reference manual senzoru 
 
 
