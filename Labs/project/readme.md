@@ -1021,11 +1021,11 @@ TOP module is designed for connecting code signal to pins of `Arty-A7-100` but i
    
 ## Logical circuit to decode LED outputs
 
-These selecting signal sel_i are switching between individual bargraphs and outputs LED_o determine which LEDs will be on.
+These selecting signal sel_i are switching between individual bargraphs and outputs LED_o determine which LEDs will be on. Output pins of our board we will connect to this logical function. 
 
 ![Images](images/logical_circuit.png)
 
-In this picture there are LEDs connected to our logical circuit.
+In this picture there is LED realization of bargraphs . We can connect it to our logical circuit and it will signalize the measured level
 
 ![Images](images/DPS.png)
 
