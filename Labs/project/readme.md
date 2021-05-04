@@ -7,14 +7,13 @@ This project was created by Tereza Beránková,Samuel Blecha,Kryštof Buroň,Ši
 [Samuel Blecha]( https://github.com/) ,
 [Kryštof Buroň]( https://github.com/),
 [Šimon Cieslar]( https://github.com/),
-[Zuzana Czmelová]( https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/project)
+[Zuzana Czmelová](https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/project)
 
 ## Project objectives 
 Our aim was to made park assistant with HC-SR04 ultrasonic sensor, sound signaling using PWM, signaling by LED bargraph.
 
 ## Hardware description
-
-## VHDL modules description and simulations
+The project is about a parking assistant with 6 sensors (3 in front & 3 at the back) .It measures distance in the front side and the back side - these sides measure at the same time and the sensors are switching among left,center and right side, but only one sensor works so they do not interfere each other. Distance, which is detected by each sensor, is signalized with LED bargraph.For every gained distance by sensors, there is also tone signalization that makes sound of "beep beep" when the closest target is present.
 
 ### VHDL design for parking assistant 
 #### 1.Park assistant
@@ -928,6 +927,6 @@ end Behavioral;
 
 ## References
 [Explaining ultrasonic sensor](https://www.youtube.com/watch?v=6F1B_N6LuKw&t=424s)
---soubor reference manual senzoru 
+[Reference manual](https://www.gie.com.my/download/um/modules/sensor/um_hc_sr04.pdf)
 
 
