@@ -566,7 +566,7 @@ Here we can see the proper function of update.
 #### 3.Beep generator 
 **A)VHDL design**
 
-
+This process describes changing frequency of the tone based on distance change. When the distance is shortest the sound creates continuos tone, the second shortest distance generates fast beeping. The bigger is distance , the slower are sounds of beeping. We can hear nothing when the distance is too much far. 
 
 ``` vhdl
  --------------------------------------------------------------------
@@ -667,9 +667,15 @@ Here we can see the proper function of update.
    
 **C) Screenshot of simulation**
 
+
+Th change of distance changes period of beeping signal.
+
 ![Images](images/B_G_Sim.png)
 
 #### 4. Distance comparator 
+
+This entity compares measured distances, and returns the closest distance measured - in bit it means that it is the highest value.
+
 **A)VHDL design**
   ```vhdl
  --------------------------------------------------------------------
@@ -798,6 +804,8 @@ Here we can see the proper function of update.
    ``` 
   **C) Screenshot of simulation**
   
+  On the image below we can see that input values can be different but the entity always return one, that is greatest = s_goat.
+  
   ![Images](images/D_C_Sim.png)
   
 #### 5. cnt_up_down 
@@ -889,6 +897,9 @@ Here we can see the proper function of update.
   ![Images](images/Cnt_Sim.png)
   
 #### 6. mux_2bit_6to1
+
+We use this VHDL design from entity which we made at seminar at school but it was also a little bit modified.
+
 **A)VHDL design**
  ```vhdl
 architecture Behavioral of mux_2bit_6to1 is
@@ -903,6 +914,7 @@ begin
 
 end Behavioral;
  ```
+ 
 **B)Testbench**
  ```vhdl
 --------------------------------------------------------------------
@@ -938,7 +950,9 @@ end Behavioral;
 ![Images](images/Mux_Sim.png)
 
 ## TOP module description and simulations
-### napojení signálů --> stejný jako PA /medium ,které napojuje piny desky `Arty-A7-100` na ten kód/ ,(TOP module is designed for connecting pins of `Arty-A7-100` to code)
+
+
+TOP module is designed for connecting pins of `Arty-A7-100` to code and it is same as the parking assistant.
 
 **A)VHDL design**
 ```vhdl
@@ -989,7 +1003,7 @@ end Behavioral;
         sound_o    =>  JA(5)
     );
    ```
-**B)Screenshot of simulation**
+
 
 ## Video
 
