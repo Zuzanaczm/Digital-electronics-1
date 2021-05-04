@@ -1032,7 +1032,7 @@ In this picture there is LED realization of bargraphs . We can connect it to our
 
 ## Video
 
-[Link to video]() - ``````
+[Link to video](https://drive.google.com/file/d/1e4VpybgQU2BDK1-Zx1SL0CHvPuiHs9Gq/view?usp=sharing) - ```https://drive.google.com/file/d/1e4VpybgQU2BDK1-Zx1SL0CHvPuiHs9Gq/view?usp=sharing```
 
 ## References
 
