@@ -3,10 +3,10 @@
 ## Team members 
 This project was created by Tereza Beránková,Samuel Blecha,Kryštof Buroň,Šimon Cieslar & Zuzana Czmelová
 
-[Tereza Beránková]( https://github.com/) - 
+[Tereza Beránková](https://github.com/xberan49/Digital-electronics-1/tree/main/Labs/Project) - ```https://github.com/xberan49/Digital-electronics-1/tree/main/Labs/Project```
 
 
-[Samuel Blecha]( https://github.com/) -
+[Samuel Blecha]( https://github.com/SamuelBlecha/Digital-electronics-1/tree/main/Labs/Project) - ``` https://github.com/SamuelBlecha/Digital-electronics-1/tree/main/Labs/Project```
 
 
 [Kryštof Buroň]( https://github.com/christ-0ff/Digital-Electronics-1/tree/main/Labs/project/) - ``` https://github.com/christ-0ff/Digital-Electronics-1/tree/main/Labs/project```
@@ -24,7 +24,9 @@ Our aim was to made park assistant with HC-SR04 ultrasonic sensor, sound signali
 The project is about a parking assistant with 6 sensors (3 in front & 3 at the back). It measures distance in the front side and the back side - these sides measure at the same time and the sensors are switching among left,center and right side, but only one sensor works so they do not interfere each other. Distance, which is detected by each sensor, is signalized with LED bargraph. For every gained distance by sensors, there is also tone signalization that makes sound of "beep beep" when the closest target is present.
 
 ### VHDL design for parking assistant 
+
 #### 1.Park assistant
+
 **A)Process of VHDL design**
 
 
@@ -125,12 +127,11 @@ The project is about a parking assistant with 6 sensors (3 in front & 3 at the b
         end if;
     end process p_back_sensor_select;  
  ```
- **B)Entities from VHDL design**
+ **B)VHDL design entities**
+ 
+ 
  
   ```vhdl
- --------------------------------------------------------------------
-    -- Connecting testbench signals with entities 
-    --------------------------------------------------------------------  
     -- Entity: Ultrasonic range meter driver - for front sensors
     uut_urm_driver_front : entity work.urm_driver_decoder
             generic map(
@@ -235,7 +236,8 @@ end Behavioral;
  
 **C)Testbench for parking assistant** 
  
- ###### Konstanty v tomhle testbenchi byly  nadefinované  tímhle způsobem - ruzne distnance -> levely 
+ 
+Konstanty v tomhle testbenchi byly  nadefinované  tímhle způsobem - ruzne distance -> levely 
  
   ```vhdl
   --------------------------------------------------------------------
