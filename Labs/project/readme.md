@@ -4,9 +4,17 @@
 This project was created by Tereza Beránková,Samuel Blecha,Kryštof Buroň,Šimon Cieslar & Zuzana Czmelová
 
 [Tereza Beránková]( https://github.com/) - ,
+
+
 [Samuel Blecha]( https://github.com/) ,
-[Kryštof Buroň]( https://github.com/), -``` https://github.com/christ-0ff/Digital-Electronics-1/tree/main/Labs/project```
+
+
+[Kryštof Buroň]( https://github.com/christ-0ff/Digital-Electronics-1/tree/main/Labs/project/), - ``` https://github.com/christ-0ff/Digital-Electronics-1/tree/main/Labs/project```
+
+
 [Šimon Cieslar]( https://github.com/),
+
+
 [Zuzana Czmelová](https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/project) - ```https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/project```
 
 ## Project objectives 
