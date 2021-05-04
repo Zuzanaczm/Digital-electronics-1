@@ -7,7 +7,7 @@ This project was created by Tereza Beránková,Samuel Blecha,Kryštof Buroň,Ši
 [Samuel Blecha]( https://github.com/) ,
 [Kryštof Buroň]( https://github.com/),
 [Šimon Cieslar]( https://github.com/),
-[Zuzana Czmelová]( https://github.com/),
+[Zuzana Czmelová]( https://github.com/)
 
 ## Project objectives 
 Our aim was to made park assistant with HC-SR04 ultrasonic sensor, sound signaling using PWM, signaling by LED bargraph.
