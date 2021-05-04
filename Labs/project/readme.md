@@ -1,7 +1,7 @@
 #  VHDL PROJECT - Parking assistant 
 
 ## Team members 
-This project was created by Tereza Beránková,Samuel Blecha,Kryštof Buroň,Šimon Cieslar & Zuzana Czmelová
+This project was created by Tereza Beránková, Samuel Blecha, Kryštof Buroň, Šimon Cieslar & Zuzana Czmelová
 
 [Tereza Beránková](https://github.com/xberan49/Digital-electronics-1/tree/main/Labs/Project) - ```https://github.com/xberan49/Digital-electronics-1/tree/main/Labs/Project```
 
@@ -18,10 +18,18 @@ This project was created by Tereza Beránková,Samuel Blecha,Kryštof Buroň,Ši
 [Zuzana Czmelová](https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/project) - ```https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/project```
 
 ## Project objectives 
-Our aim was to made park assistant with HC-SR04 ultrasonic sensor, sound signaling using PWM, signaling by LED bargraph.
+Our aim was to made parking assistant with HC-SR04 ultrasonic sensor, sound signaling using PWM, signaling by LED bargraph.
 
 ## Hardware description
-The project is about a parking assistant with 6 sensors (3 in front & 3 at the back). It measures distance in the front side and the back side - these sides measure at the same time and the sensors are switching among left,center and right side, but only one sensor works so they do not interfere each other. Distance, which is detected by each sensor, is signalized with LED bargraph. For every gained distance by sensors, there is also tone signalization that makes sound of "beep beep" when the closest target is present.
+The project is about parking assistant with 6 sensors (3 in front & 3 at the back). It measures distance in the front side and the back side - these sides measure at the same time and the sensors are switching among left, center and right side, but only one sensor works so they do not interfere each other. Distance, which is detected by each sensor, is signalized with LED bargraph. For every gained distance by sensors, there is also tone signalization that makes sound of "beep beep" when the closest target is present.
+
+
+The description of hardware is pictured in the block diagram. 
+
+If you can not see this image properly, there is a pdf file called Project_PS.pdf --> [Link](https://github.com/Zuzanaczm/Digital-electronics-1/blob/main/Labs/project/Project_PS.pdf)
+
+![Images](images/block_diagram.png)
+
 
 ### VHDL design for parking assistant 
 
@@ -30,7 +38,7 @@ The project is about a parking assistant with 6 sensors (3 in front & 3 at the b
 **A)Process of VHDL design**
 
 
- This process is changing connection so only one sensor detects distance at the time. We start with sensor on the left side - its input & output connects to internal signals of design source `parking_assistant_6sensor`. These internal signals are connected to `urm_driver_decoder`. After receiving update from `urm_driver_decoder`, measured distance is saved to particular variable called s_dist_lvl that is defined for each sensor. The next state follows and the internal signals will be switched to input & output of the next sensor. Both processes ( `p_front_sensor_select` ; `p_back_sensor_select` ) work the same but independently.
+ This process changes internal signals connections of  `parking_assistant_6sensor` and sensors connected to it, so only one sensor detects distance at the time. We start with sensor on the left side - its input & output connects to internal signals of design source `parking_assistant_6sensor`. These internal signals are connected to `urm_driver_decoder`. After receiving an update from `urm_driver_decoder`, measured distance is saved to particular variable called s_dist_lvl that is defined for each sensor. The next state follows and the internal signals will be switched to input & output of the next sensor. Both processes ( `p_front_sensor_select` ; `p_back_sensor_select` ) work the same but independently.
  
 ```vhdl
  --------------------------------------------------------------------
@@ -130,7 +138,7 @@ The project is about a parking assistant with 6 sensors (3 in front & 3 at the b
  **B)VHDL design entities**
  
 
- There are 7 entities connected to parking assistant. We have 2 same entities `urm_driver_decoder`  and 5 single entities `distance_comparator`, `tone_gen`, ` mux_led`, `clk_en0`, `bin_cnt0`.
+ There are 7 entities connected to parking assistant. We have 2 same entities `urm_driver_decoder`  and 5 single entities `distance_comparator`, `beep_generator`, ` mux_2bit_6to1`, `clock_enable`, `cnt_up_down`.
  
   ```vhdl
   --------------------------------------------------------------------
@@ -381,11 +389,11 @@ end Behavioral;
   
  **D)Screenshots of simulation** 
  
- In the first picture we can see the whole simulation. The signals with shades of blue are for front side, with shades of light brown are for back side, red signals represent updating internal signals that change state , green s_tone signals represent sound output, green s_state signal is internal signal of URM driver decoder and on last 2 signals we can see LED output. Signals s_sensor_in_o are sending 10us pulses to sensors and s_sensor_out_i are receiving returning signals. From a short look  we can tell that it works properly. The second and third picture is zoomed image of the first picture. The 1st zoomed area is marked with first violet vertical line and the 2nd zoomed area is marked with second violet vertical line. S_sensor2_out_i and s_sensor5_out_i in this highlighted area are 5000us long,  s_sensor1_out_i and s_sensor4_out_i are 3000us long. We will take a look at the zoomed pictures.
+ In the first picture we can see the whole simulation. The signals with shades of blue are for front side, with shades of light brown are for back side, red signals represent updating internal signals that change state , green s_tone signals represent sound output, green s_state signal is internal signal of URM driver decoder and on last 2 green signals we can see LED output. Signals s_sensor_in_o are sending 10us pulses to sensors and s_sensor_out_i are receiving returning signals. From a short look we can tell that it works properly. The second and third picture is zoomed image of the first picture. The 1st zoomed area is marked with first violet vertical line and the 2nd zoomed area is marked with second violet vertical line. Signals s_sensor2_out_i and s_sensor5_out_i in this highlighted area are 5000us long, signals s_sensor1_out_i and s_sensor4_out_i are 3000us long. We will take a look at the zoomed pictures.
  
  ![Images](images/PA1.png)
  
- In the picture we can see ends of s_sensor1_out_i and s_sensor4_out_i which are 3000us long. After the signals change the state to 0, the update is triggered and every state changes to its right following position and the measured distance is saved to its proper value s_dist_lvl1 and s_dist_lvl4. With calculation we can check that 3000us long signal corresponds to 51cm which is above first treshold and this value is represented by `10` . After all the URM driver decoder sends 10us pulse into 2 different sensors and then waits for returning signal. At the end of this picture we can see returning signals (s_sensor2_out_i and s_sensor5_out_i)  and we will take a look on the ends of these signals in the next picture.
+ In the picture we can see ends of s_sensor1_out_i and s_sensor4_out_i signals which are 3000us long. After these signals change the state to 0, the update is triggered, every state changes to its right following position and the measured distance is saved to its proper value s_dist_lvl1 and s_dist_lvl4. With calculation we can check that 3000us long signal corresponds to 51cm which is above first treshold and this value is represented by `10` . After all that URM driver decoder sends 10us pulse into 2 following sensors and then waits for returning signal. At the end of this picture we can see returning signals (s_sensor2_out_i and s_sensor5_out_i)  and we will take a look on the ends of these signals in the next picture.
  
  ![Images](images/PA2.png)
   
@@ -393,16 +401,16 @@ end Behavioral;
   
  ![Images](images/PA4.png)
    
-   This is close look when the update is triggered and it works properly - it changes states to right positions.
+   This is close look on the update when it is triggered. And we can see that it works properly - it changes states to right positions.
    
  ![Images](images/PA3.png)
 
-#### Submodules of park assistant :
+#### Submodules of parking assistant :
 
 #### 2.URM (ultrasonic range meter) driver decoder 
 **A)VHDL design of URM driver decoder** 
 
-  Process for URM driver decoder. URM driver decoder communicates with  each sensor and it sends 10us pulses, then waits for pulses coming back from the sensor. When it comes , it counts its length. After that, the length is assigned one of four tresholds. 
+  Process for URM driver decoder. URM driver decoder communicates with each sensor separately. It sends 10us pulses, then waits for pulses coming back from the sensor. When it comes , it counts its length. After that, it assignes one of four tresholds to the output length measured. 
 
   ``` vhdl
    --------------------------------------------------------------------
@@ -546,7 +554,7 @@ end Behavioral;
 **C) Screenshots of simulation**
 
 
-The first picture is a look on the whole simulation which is 50ms long.
+The first picture is a look on the whole simulation which is 50ms long. Again from a short look we can see that it works properly. 
 
 ![Images](images/URM1.png)
 
@@ -554,7 +562,7 @@ In the zoomed picture we can find the ending of returning signal which is then a
 
 ![Images](images/URM2.png)
 
-Here we can see the beginning of this simulation  when the reset is on (it is in value of 1) . When the reset is in value of 0 then the whole cycle starts ( Initial --> Pulse -->  Waiting --> Count --> Initial...).
+Here we can see the beginning of this simulation when the reset is on (it is in value of 1). When the reset is in value of 0 then the whole cycle starts ( Initial --> Pulse -->  Waiting --> Count --> Initial...).
 
 ![Images](images/URMS.png)
 
@@ -566,7 +574,7 @@ Here we can see the proper function of update.
 #### 3.Beep generator 
 **A)VHDL design**
 
-This process describes changing frequency of the tone based on distance change. When the distance is shortest the sound creates continuos tone, the second shortest distance generates fast beeping. The bigger is distance , the slower are sounds of beeping. We can hear nothing when the distance is too much far. 
+This process describes changing frequency of the tone based on distance change. When the distance is shortest the sound creates continuos tone, the second shortest distance generates fast beeping. The bigger is distance , the slower are sounds of beeping. We can hear nothing when the distance is too far. 
 
 ``` vhdl
  --------------------------------------------------------------------
@@ -668,13 +676,13 @@ This process describes changing frequency of the tone based on distance change. 
 **C) Screenshot of simulation**
 
 
-Th change of distance changes period of beeping signal.
+When the distance changes period of beeping signal is changed. As displayed on simulation below
 
 ![Images](images/B_G_Sim.png)
 
 #### 4. Distance comparator 
 
-This entity compares measured distances, and returns the closest distance measured - in bit it means that it is the highest value.
+This entity compares measured distances, and returns the closest distance measured - in our project it its defined that in bit it means that it is the highest value.
 
 **A)VHDL design**
   ```vhdl
@@ -1015,9 +1023,16 @@ TOP module is designed for connecting code signal to pins of `Arty-A7-100` but i
 ## Video
 
 ## References
-[Explaining ultrasonic sensor](https://www.youtube.com/watch?v=6F1B_N6LuKw&t=424s)
 
 
-[Reference manual](https://www.gie.com.my/download/um/modules/sensor/um_hc_sr04.pdf)
+We used this reference manual to find out how the sensors work...
 
+
+[Reference manual](https://www.gie.com.my/download/um/modules/sensor/um_hc_sr04.pdf) - ```https://www.gie.com.my/download/um/modules/sensor/um_hc_sr04.pdf```
+
+
+And to be sure we watched first few minutes of this video where the man explains how to sensor work in details.
+
+
+[Explaining ultrasonic sensor](https://www.youtube.com/watch?v=6F1B_N6LuKw&t=100s) - ```https://www.youtube.com/watch?v=6F1B_N6LuKw&t=100s```
 
