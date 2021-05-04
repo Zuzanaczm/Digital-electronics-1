@@ -15,7 +15,7 @@ Our aim was to create park assistant with HC-SR04 ultrasonic sensor, sound signa
 
 ### VHDL design for parking assistant 
 #### 1.Park assistant
-**A) process  +komentár**
+**A)process  +komentár**
 ```vhdl
  --------------------------------------------------------------------
     -- Proces for switching between Left & Center & Right front sensor
@@ -111,7 +111,7 @@ Our aim was to create park assistant with HC-SR04 ultrasonic sensor, sound signa
         end if;
     end process p_back_sensor_select;  
  ```
- **B) entity + komentár**
+ **B)entity + komentár**
  
   ```vhdl
  --------------------------------------------------------------------
@@ -219,8 +219,9 @@ Our aim was to create park assistant with HC-SR04 ultrasonic sensor, sound signa
 end Behavioral;
  ```
  
-**C) testbench** 
- Konstanty v tomhle testbenchi byly takhle nadefinované  tímhle způsobem - ruzne distnance -> levely 
+**C)testbench** 
+ 
+-Konstanty v tomhle testbenchi byly  nadefinované  tímhle způsobem - ruzne distnance -> levely 
  
   ```vhdl
   --------------------------------------------------------------------
@@ -361,8 +362,8 @@ end Behavioral;
  **D) Screenshots of simulation** 
  
 
-#### 2. UURM Ultimate ultrasonic range meter driver decoder 
-**A) process of URM driver decoder 
+#### 2. UURM (ultrasonic range meter) driver decoder 
+**A)process of URM driver decoder** 
 
   ``` vhdl
 --------------------------------------------------------------------
@@ -501,7 +502,7 @@ end Behavioral;
         wait;
     end process p_stimulus;
 ``` 
-**C) Screenshots of simulation
+**C) Screenshots of simulation**
 
 #### 3. Beep beep generator
 
