@@ -132,6 +132,9 @@ The project is about a parking assistant with 6 sensors (3 in front & 3 at the b
  
  
   ```vhdl
+  --------------------------------------------------------------------
+    -- Connecting entities to parking_assistant_6sensor
+    --------------------------------------------------------------------
     -- Entity: Ultrasonic range meter driver - for front sensors
     uut_urm_driver_front : entity work.urm_driver_decoder
             generic map(
@@ -376,7 +379,13 @@ Konstanty v tomhle testbenchi byly  nadefinované  tímhle způsobem - ruzne dis
   ```    
   
  **D)Screenshots of simulation** 
+ ![Images](images/PA1.png)
  
+ ![Images](images/PA2.png)
+  
+ ![Images](images/PA3.png)
+   
+ ![Images](images/PA4.png)
 
 #### 2.URM (ultrasonic range meter) driver decoder 
 **A)Process of URM driver decoder** 
@@ -520,6 +529,11 @@ Konstanty v tomhle testbenchi byly  nadefinované  tímhle způsobem - ruzne dis
 ``` 
 **C) Screenshots of simulation**
 
+![Images](images/URM1.png)
+![Images](images/URM2.png)
+![Images](images/URMU.png)
+![Images](images/URMS.png)
+
 #### 3.Beep generator ("submodules" of park assistant)
 **A)VHDL design**
 ``` vhdl
@@ -620,6 +634,8 @@ Konstanty v tomhle testbenchi byly  nadefinované  tímhle způsobem - ruzne dis
    ``` 
    
 **C) Screenshot of simulation**
+
+![Images](images/B_G_Sim.png)
 
 #### 4. Distance comparator 
 **A)VHDL design**
@@ -750,6 +766,8 @@ Konstanty v tomhle testbenchi byly  nadefinované  tímhle způsobem - ruzne dis
    ``` 
   **C) Screenshot of simulation**
   
+  ![Images](images/D_C_Sim.png)
+  
 #### 5. cnt_up_down 
 **A) VDHL design**
 ```vhdl
@@ -833,9 +851,11 @@ Konstanty v tomhle testbenchi byly  nadefinované  tímhle způsobem - ruzne dis
   ```
    
  
- 
+
 **C)Screenshot of simulation**
 
+  ![Images](images/Cnt_Sim.png)
+  
 #### 6. mux_2bit_6to1
 **A)VHDL design**
  ```vhdl
@@ -882,6 +902,8 @@ end Behavioral;
     end process p_stimulus;
   ```
 **C)Screenshot of simulation**
+
+![Images](images/Mux_Sim.png)
 
 ## TOP module description and simulations
 ### napojení signálů --> stejný jako PA /medium ,které napojuje piny desky `Arty-A7-100` na ten kód/ ,(TOP module is designed for connecting pins of `Arty-A7-100` to code)
