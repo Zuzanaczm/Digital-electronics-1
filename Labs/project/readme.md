@@ -443,7 +443,7 @@ end Behavioral;
   
   **B)Testbench**
   
-  ``` vhdl
+  ```vhdl
       --------------------------------------------------------------------
     -- Clock generation process
     --------------------------------------------------------------------
@@ -610,7 +610,7 @@ end Behavioral;
 
 #### 4. Distance comparator 
 **A)VHDL design**
-  ``` vhdl
+  ```vhdl
  --------------------------------------------------------------------
     -- Process for finding highest value
     --------------------------------------------------------------------
@@ -651,7 +651,7 @@ end Behavioral;
     end process p_comp;
   ```  
   **B) Testbench**
-  ``` vhdl
+  ```vhdl
    -- Connecting testbench signals with distance_comparator
     uut_distance_comparator : entity work.distance_comparator
         port map(
@@ -771,7 +771,7 @@ end Behavioral;
    ```
    **B)Testbench**
    
-    ```vhdl
+   ```vhdl
     --------------------------------------------------------------------
     -- Clock generation process
     --------------------------------------------------------------------
@@ -817,7 +817,8 @@ end Behavioral;
         report "Stimulus process finished" severity note;
         wait;
     end process p_stimulus;
-    ```
+  ```
+   
  
  
 **C)Screenshot of simulation**
