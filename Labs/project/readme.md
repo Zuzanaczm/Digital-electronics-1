@@ -809,6 +809,10 @@ This entity compares measured distances, and returns the closest distance measur
   ![Images](images/D_C_Sim.png)
   
 #### 5. cnt_up_down 
+
+One of the two entities that were made in school. It works the same but it was a bit modified. It only counts to value b"101" - 5 and then it resets itself.
+
+
 **A) VDHL design**
 ```vhdl
 --------------------------------------------------------------------
@@ -894,7 +898,10 @@ This entity compares measured distances, and returns the closest distance measur
 
 **C)Screenshot of simulation**
 
-  ![Images](images/Cnt_Sim.png)
+
+On this simulation image we can see that it counts properly, when the enabling (s_en) signal is positive, from zero to number five, and then it resets itself. 
+
+ ![Images](images/Cnt_Sim.png)
   
 #### 6. mux_2bit_6to1
 
@@ -952,7 +959,7 @@ end Behavioral;
 ## TOP module description and simulations
 
 
-TOP module is designed for connecting pins of `Arty-A7-100` to code and it is same as the parking assistant.
+TOP module is designed for connecting code signal to pins of `Arty-A7-100` but it is same as the parking assistant.
 
 **A)VHDL design**
 ```vhdl
