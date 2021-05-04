@@ -15,7 +15,7 @@ Our aim was to create park assistant with HC-SR04 ultrasonic sensor, sound signa
 
 ### VHDL design for parking assistant 
 #### 1.Park assistant
-**A)process  +komentár**
+**A)process  from VHDL design +komentár**
 ```vhdl
  --------------------------------------------------------------------
     -- Proces for switching between Left & Center & Right front sensor
@@ -111,7 +111,7 @@ Our aim was to create park assistant with HC-SR04 ultrasonic sensor, sound signa
         end if;
     end process p_back_sensor_select;  
  ```
- **B)entity + komentár**
+ **B)entities from VHDL design + komentár**
  
   ```vhdl
  --------------------------------------------------------------------
@@ -219,7 +219,7 @@ Our aim was to create park assistant with HC-SR04 ultrasonic sensor, sound signa
 end Behavioral;
  ```
  
-**C)testbench** 
+**C)testbench for Parking assistant** 
  
 -Konstanty v tomhle testbenchi byly  nadefinované  tímhle způsobem - ruzne distnance -> levely 
  
@@ -504,14 +504,339 @@ end Behavioral;
 ``` 
 **C) Screenshots of simulation**
 
-#### 3. Beep beep generator
+#### 3. Beep beep generator ("submodules of park assistant)
+**A) VHDL design**
+``` vhdl
+ --------------------------------------------------------------------
+    -- Process for changing frequency of the tone
+    --------------------------------------------------------------------
+    p_pulse_clock : process(pulse_clock_period,clk)  -- Generates signal, which determines the     
+    begin                                            -- frequency of beeping.
+        if (rising_edge(clk)) then
+            if (s_pulse_counter < 100000*pulse_clock_period) then
+                s_pulse_counter <= s_pulse_counter +1;
+            else
+                pc_out <= not pc_out;
+                s_pulse_counter <= 0;                         
+            end if;
+        end if;
+    end process p_pulse_clock;
+    
+    --------------------------------------------------------------------
+    -- Process for changing frequency of tone depending on the input
+    --------------------------------------------------------------------
+    p_clock_enable : process(dist_lvl,clk)
+    begin
+        case dist_lvl is
+            when "11" =>                            -- Shortest distance => continuous tone.
+                s_en <= '1';                        -- Tone generator output enabled
+            when "10" =>                            -- Second shortest distance => fast beeping
+                pulse_clock_period <= fast_period;  -- Pulse clock generates fast beeping signal
+                s_en  <= pc_out;                    -- Enables tone generator output with the frequencz of pulse clock
+            when "01" =>                            -- Second longest distance => slow beeping
+                pulse_clock_period <= slow_period;  -- Pulse clock generates slow beeping signal
+                s_en  <= pc_out;                    -- Enables tone generator output with the frequencz of pulse clock
+            when others =>                          -- Farthest distance => silence
+                s_en <= '0';                        -- Tone generator output off
+        end case;
+    end process p_clock_enable;
+    
+    --------------------------------------------------------------------
+    -- Tone generating process
+    --------------------------------------------------------------------
+    p_1kHz_gen : process(clk, s_en)                 -- Tone generator
+    begin        
+        if rising_edge(clk) then        
+            if (reset = '1') then
+                s_clk_counter   <= 0;
+                s_local_clock   <= '0';
+                tone_o          <= '0';
+            elsif (s_clk_counter >= ((s_clk_period-1)/2 )) then
+                s_clk_counter   <= 0;
+                s_local_clock   <= not s_local_clock;
+            else
+                s_clk_counter   <= s_clk_counter + 1;
+            end if;           
+        end if;
+           
+        if (s_en = '1') then
+            tone_o <= s_local_clock;   -- Enables tone gen. output 
+        else
+            tone_o <= '0';
+        end if;
+    end process p_1kHz_gen;
+
+``` 
+**B) Testbench**
+```vhdl
+ --------------------------------------------------------------------
+    -- Reset generation process
+    --------------------------------------------------------------------    
+    p_clk_gen : process
+    begin
+        while now < 50 ms loop
+            s_clk_100MHz <= '0';
+            wait for c_CLK_100MHZ_PERIOD / 2;
+            s_clk_100MHz <= '1';
+            wait for c_CLK_100MHZ_PERIOD / 2;
+        end loop;
+        wait;
+    end process p_clk_gen;
+    
+    --------------------------------------------------------------------
+    -- Data generation process
+    --------------------------------------------------------------------
+    p_stimulus : process
+    begin
+        report "Stimulus process started" severity note;
+        
+            distance_lvl <= "00";
+            wait for 10ms;
+            distance_lvl <= "01";
+            wait for 10ms;
+            distance_lvl <= "10";
+            wait for 10ms;
+            distance_lvl <= "11";
+            
+        report "Stimulus process finished" severity note;
+        wait;
+    end process p_stimulus;
+   ``` 
+   
+**C) Screenshot of simulation**
 
 #### 4. Distance comparator 
-
+**A)VHDL design**
+  ``` vhdl
+ --------------------------------------------------------------------
+    -- Process for finding highest value
+    --------------------------------------------------------------------
+    p_comp : process(a_i,b_i,c_i,d_i,e_i,f_i,temp_1,temp_2,temp_3,temp_4)
+    begin
+        -- Finding the highest value from input signals, saving them into temporary signals
+        if (b_i >= a_i) then  
+            temp_1 <= b_i;
+        else
+            temp_1 <= a_i;
+        end if;
+        
+        if (c_i >= d_i) then
+            temp_2 <= c_i;
+        else
+            temp_2 <= d_i;
+        end if;
+        
+        if (e_i >= f_i) then
+            temp_3 <= e_i;
+        else
+            temp_3 <= f_i;
+        end if;
+        
+        -- Finding the highest value of the temporary signals.
+        if (temp_1 >= temp_2) then
+            temp_4 <= temp_1;
+        else
+            temp_4 <= temp_2;
+        end if;
+        
+        -- Greatest value sent to output.
+        if (temp_4 >= temp_3) then
+            greatest_o <= temp_4;
+        else
+            greatest_o <= temp_3;
+        end if;
+    end process p_comp;
+  ```  
+  **B) Testbench**
+  ``` vhdl
+   -- Connecting testbench signals with distance_comparator
+    uut_distance_comparator : entity work.distance_comparator
+        port map(
+            a_i           => s_a,
+            b_i           => s_b,
+            c_i           => s_c,
+            d_i           => s_d,
+            e_i           => s_e,
+            f_i           => s_f,
+            greatest_o    => s_goat
+        );
+    --------------------------------------------------------------------
+    -- Data generation process
+    --------------------------------------------------------------------
+    p_stimulus : process
+    begin        
+        report "Stimulus process started" severity note;
+        s_a <= "01";
+        s_b <= "00";
+        s_c <= "00";
+        s_d <= "00";
+        s_e <= "00";
+        s_f <= "00";
+        wait for 10ns;
+        
+        s_a <= "00";
+        s_b <= "01";
+        s_c <= "00";
+        s_d <= "00";
+        s_e <= "00";
+        s_f <= "00";
+        wait for 10ns;
+        
+        s_a <= "00";
+        s_b <= "00";
+        s_c <= "01";
+        s_d <= "00";
+        s_e <= "00";
+        s_f <= "00";
+        wait for 10ns;
+        
+        s_a <= "00";
+        s_b <= "00";
+        s_c <= "00";
+        s_d <= "01";
+        s_e <= "00";
+        s_f <= "00";
+        wait for 10ns;
+        
+        s_a <= "00";
+        s_b <= "00";
+        s_c <= "00";
+        s_d <= "01";
+        s_e <= "00";
+        s_f <= "00";
+        wait for 10ns;
+        
+        s_a <= "00";
+        s_b <= "00";
+        s_c <= "00";
+        s_d <= "00";
+        s_e <= "01";
+        s_f <= "00";
+        wait for 10ns;
+        
+        s_a <= "00";
+        s_b <= "00";
+        s_c <= "00";
+        s_d <= "00";
+        s_e <= "00";
+        s_f <= "01";
+        wait for 10ns;
+        
+        s_a <= "11";
+        s_b <= "11";
+        s_c <= "00";
+        s_d <= "00";
+        s_e <= "00";
+        s_f <= "01";
+        wait for 10ns;
+        wait;
+    end process p_stimulus;
+   ``` 
+  **C) Screenshot of simulation**
+  
 #### 5. cnt_up_down 
+**A) VDHL design**
+```vhdl
+--------------------------------------------------------------------
+    -- p_cnt_up_down:
+    -- Clocked process with synchronous reset which implements n-bit 
+    -- up/down counter.
+    --------------------------------------------------------------------
+    p_cnt_up_down : process(clk)
+    begin
+        if rising_edge(clk) then
+        
+            if (reset = '1') then               -- Synchronous reset
+                s_cnt_local <= (others => '0'); -- Clear all bits
+
+            elsif (en_i = '1') then       -- Test if counter is enabled
+                if (cnt_up_i = '1') then
+                    if (s_cnt_local >= b"101") then     -- Counter Shortened to 6 values
+                        s_cnt_local <= b"000";
+                    else
+                        s_cnt_local <= s_cnt_local + 1;
+                    end if;                    
+                else
+                    s_cnt_local <= s_cnt_local - 1;
+                end if;
+            end if;
+        end if;
+    end process p_cnt_up_down;
+
+    -- Output must be retyped from "unsigned" to "std_logic_vector"
+    cnt_o <= std_logic_vector(s_cnt_local);
+   ```
+   **B)Testbench**
+    ```vhdl
+   -- Connecting testbench signals with cnt_up_down entity
+    -- (Unit Under Test)
+    uut_cnt : entity work.cnt_up_down
+        generic map(
+            g_CNT_WIDTH  => c_CNT_WIDTH
+        )
+        port map(
+            clk      => s_clk_100MHz,
+            reset    => s_reset,
+            en_i     => s_en,
+            cnt_up_i => s_cnt_up,
+            cnt_o    => s_cnt
+        );
+
+    --------------------------------------------------------------------
+    -- Clock generation process
+    --------------------------------------------------------------------
+    p_clk_gen : process
+    begin
+        while now < 750 ns loop         -- 75 periods of 100MHz clock
+            s_clk_100MHz <= '0';
+            wait for c_CLK_100MHZ_PERIOD / 2;
+            s_clk_100MHz <= '1';
+            wait for c_CLK_100MHZ_PERIOD / 2;
+        end loop;
+        wait;
+    end process p_clk_gen;
+
+    --------------------------------------------------------------------
+    -- Reset generation process
+    --------------------------------------------------------------------
+    p_reset_gen : process
+    begin
+        
+        -- Reset activated
+        s_reset <= '1';
+        wait for 50 ns;
+
+        s_reset <= '0';
+        wait;
+    end process p_reset_gen;
+
+    --------------------------------------------------------------------
+    -- Data generation process
+    --------------------------------------------------------------------
+    p_stimulus : process
+    begin
+        report "Stimulus process started" severity note;
+
+        -- Enable counting
+        s_en     <= '1';
+        s_cnt_up <= '1';
+        wait for 380 ns;
+        -- Disable counting
+        s_en     <= '0';
+
+        report "Stimulus process finished" severity note;
+        wait;
+    end process p_stimulus;
+    ```
+ 
+ 
+**C)Screenshot of simulation**
 
 #### 6. mux_2bit_6to1
- 
+**A)VHDL design**
+**B)Testbench**
+**C)Screenshot of simulation**
+
 ## TOP module description and simulations
 napojení signálů --> stejný jako PA /medium ,které napojuje piny desky `Arty-A7-100` na ten kód/
 
