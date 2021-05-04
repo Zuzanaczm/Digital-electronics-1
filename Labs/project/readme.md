@@ -3,16 +3,16 @@
 ## Team members 
 This project was created by Tereza Beránková,Samuel Blecha,Kryštof Buroň,Šimon Cieslar & Zuzana Czmelová
 
-[Tereza Beránková]( https://github.com/) - ,
+[Tereza Beránková]( https://github.com/) - 
 
 
-[Samuel Blecha]( https://github.com/) ,
+[Samuel Blecha]( https://github.com/) -
 
 
-[Kryštof Buroň]( https://github.com/christ-0ff/Digital-Electronics-1/tree/main/Labs/project/), - ``` https://github.com/christ-0ff/Digital-Electronics-1/tree/main/Labs/project```
+[Kryštof Buroň]( https://github.com/christ-0ff/Digital-Electronics-1/tree/main/Labs/project/) - ``` https://github.com/christ-0ff/Digital-Electronics-1/tree/main/Labs/project```
 
 
-[Šimon Cieslar]( https://github.com/),
+[Šimon Cieslar](https://github.com/SimonCieslar/Digital-electronics-1/tree/main/Labs/Project) - ``` https://github.com/SimonCieslar/Digital-electronics-1/tree/main/Labs/Project```
 
 
 [Zuzana Czmelová](https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/project) - ```https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/project```
@@ -21,11 +21,13 @@ This project was created by Tereza Beránková,Samuel Blecha,Kryštof Buroň,Ši
 Our aim was to made park assistant with HC-SR04 ultrasonic sensor, sound signaling using PWM, signaling by LED bargraph.
 
 ## Hardware description
-The project is about a parking assistant with 6 sensors (3 in front & 3 at the back) .It measures distance in the front side and the back side - these sides measure at the same time and the sensors are switching among left,center and right side, but only one sensor works so they do not interfere each other. Distance, which is detected by each sensor, is signalized with LED bargraph.For every gained distance by sensors, there is also tone signalization that makes sound of "beep beep" when the closest target is present.
+The project is about a parking assistant with 6 sensors (3 in front & 3 at the back). It measures distance in the front side and the back side - these sides measure at the same time and the sensors are switching among left,center and right side, but only one sensor works so they do not interfere each other. Distance, which is detected by each sensor, is signalized with LED bargraph. For every gained distance by sensors, there is also tone signalization that makes sound of "beep beep" when the closest target is present.
 
 ### VHDL design for parking assistant 
 #### 1.Park assistant
-**A)Process  from VHDL design**
+**A)Process of VHDL design**
+ This process is changing connection so only one sensor detects distance at the time. We start with sensor on the left side - its input & output connects to internal signals of design source `parking_assistant_6sensor`. These internal signals are connected to `urm_driver_decoder`. After receiving update from `urm_driver_decoder`, measured distance is saved to particular variable called s_dist_lvl that is defined for each sensor. The next state follows and the internal signals will be switched to input & output of the next sensor. Both processes ( `p_front_sensor_select` ; `p_back_sensor_select` ) work the same but independently.
+ 
 ```vhdl
  --------------------------------------------------------------------
     -- Proces for switching between Left & Center & Right front sensor
