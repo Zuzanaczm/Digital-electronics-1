@@ -26,6 +26,8 @@ The project is about a parking assistant with 6 sensors (3 in front & 3 at the b
 ### VHDL design for parking assistant 
 #### 1.Park assistant
 **A)Process of VHDL design**
+
+
  This process is changing connection so only one sensor detects distance at the time. We start with sensor on the left side - its input & output connects to internal signals of design source `parking_assistant_6sensor`. These internal signals are connected to `urm_driver_decoder`. After receiving update from `urm_driver_decoder`, measured distance is saved to particular variable called s_dist_lvl that is defined for each sensor. The next state follows and the internal signals will be switched to input & output of the next sensor. Both processes ( `p_front_sensor_select` ; `p_back_sensor_select` ) work the same but independently.
  
 ```vhdl
