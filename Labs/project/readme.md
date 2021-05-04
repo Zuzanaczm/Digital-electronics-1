@@ -772,20 +772,6 @@ end Behavioral;
    **B)Testbench**
    
     ```vhdl
-   -- Connecting testbench signals with cnt_up_down entity
-    -- (Unit Under Test)
-    uut_cnt : entity work.cnt_up_down
-        generic map(
-            g_CNT_WIDTH  => c_CNT_WIDTH
-        )
-        port map(
-            clk      => s_clk_100MHz,
-            reset    => s_reset,
-            en_i     => s_en,
-            cnt_up_i => s_cnt_up,
-            cnt_o    => s_cnt
-        );
-
     --------------------------------------------------------------------
     -- Clock generation process
     --------------------------------------------------------------------
