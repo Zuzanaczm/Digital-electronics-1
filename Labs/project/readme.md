@@ -3,11 +3,14 @@
 ## Team members 
 This project was created by Tereza Beránková,Samuel Blecha,Kryštof Buroň,Šimon Cieslar & Zuzana Czmelová
 
-[Link to  GitHub project folder]( https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/project)
---doplnit ostatnych rip
+[Tereza Beránková]( https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/project)
+[Samuel Blecha]( https://github.com/) --doplnit
+[Kryštof Buroň]( https://github.com/)
+[Šimon Cieslar]( https://github.com/)
+[Zuzana Czmelová]( https://github.com/)
 
 ## Project objectives 
-Our aim was to create park assistant with HC-SR04 ultrasonic sensor, sound signaling using PWM, signaling by LED bargraph.
+Our aim was to made park assistant with HC-SR04 ultrasonic sensor, sound signaling using PWM, signaling by LED bargraph.
 
 ## Hardware description
 
@@ -15,7 +18,7 @@ Our aim was to create park assistant with HC-SR04 ultrasonic sensor, sound signa
 
 ### VHDL design for parking assistant 
 #### 1.Park assistant
-**A)process  from VHDL design +komentár**
+**A)Process  from VHDL design**
 ```vhdl
  --------------------------------------------------------------------
     -- Proces for switching between Left & Center & Right front sensor
@@ -111,7 +114,7 @@ Our aim was to create park assistant with HC-SR04 ultrasonic sensor, sound signa
         end if;
     end process p_back_sensor_select;  
  ```
- **B)entities from VHDL design + komentár**
+ **B)Entities from VHDL design**
  
   ```vhdl
  --------------------------------------------------------------------
@@ -219,9 +222,9 @@ Our aim was to create park assistant with HC-SR04 ultrasonic sensor, sound signa
 end Behavioral;
  ```
  
-**C)testbench for Parking assistant** 
+**C)Testbench for parking assistant** 
  
--Konstanty v tomhle testbenchi byly  nadefinované  tímhle způsobem - ruzne distnance -> levely 
+ ###### Konstanty v tomhle testbenchi byly  nadefinované  tímhle způsobem - ruzne distnance -> levely 
  
   ```vhdl
   --------------------------------------------------------------------
@@ -359,11 +362,11 @@ end Behavioral;
     end process p_stimulus;
   ```    
   
- **D) Screenshots of simulation** 
+ **D)Screenshots of simulation** 
  
 
-#### 2. UURM (ultrasonic range meter) driver decoder 
-**A)process of URM driver decoder** 
+#### 2.URM (ultrasonic range meter) driver decoder 
+**A)Process of URM driver decoder** 
 
   ``` vhdl
 --------------------------------------------------------------------
@@ -504,8 +507,8 @@ end Behavioral;
 ``` 
 **C) Screenshots of simulation**
 
-#### 3. Beep beep generator ("submodules of park assistant)
-**A) VHDL design**
+#### 3.Beep generator ("submodules" of park assistant)
+**A)VHDL design**
 ``` vhdl
  --------------------------------------------------------------------
     -- Process for changing frequency of the tone
@@ -567,7 +570,7 @@ end Behavioral;
     end process p_1kHz_gen;
 
 ``` 
-**B) Testbench**
+**B)Testbench**
 ```vhdl
  --------------------------------------------------------------------
     -- Reset generation process
@@ -767,6 +770,7 @@ end Behavioral;
     cnt_o <= std_logic_vector(s_cnt_local);
    ```
    **B)Testbench**
+   
     ```vhdl
    -- Connecting testbench signals with cnt_up_down entity
     -- (Unit Under Test)
