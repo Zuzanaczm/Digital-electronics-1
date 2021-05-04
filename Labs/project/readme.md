@@ -3,11 +3,11 @@
 ## Team members 
 This project was created by Tereza Beránková,Samuel Blecha,Kryštof Buroň,Šimon Cieslar & Zuzana Czmelová
 
-[Tereza Beránková]( https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/project),
+[Tereza Beránková]( https://github.com/),
 [Samuel Blecha]( https://github.com/) ,
 [Kryštof Buroň]( https://github.com/),
 [Šimon Cieslar]( https://github.com/),
-[Zuzana Czmelová]( https://github.com/)
+[Zuzana Czmelová]( https://github.com/Zuzanaczm/Digital-electronics-1/tree/main/Labs/project)
 
 ## Project objectives 
 Our aim was to made park assistant with HC-SR04 ultrasonic sensor, sound signaling using PWM, signaling by LED bargraph.
@@ -825,16 +825,109 @@ end Behavioral;
 
 #### 6. mux_2bit_6to1
 **A)VHDL design**
+ ```vhdl
+architecture Behavioral of mux_2bit_6to1 is
+
+begin
+       f_o <= a_i when (sel_i = "000") else
+              b_i when (sel_i = "001") else
+              c_i when (sel_i = "010") else
+              d_i when (sel_i = "011") else
+              e_i when (sel_i = "100") else
+              f_i;                 
+
+end Behavioral;
+ ```
 **B)Testbench**
+ ```vhdl
+--------------------------------------------------------------------
+    -- Data generation process
+    --------------------------------------------------------------------
+    p_stimulus : process
+    begin        
+        report "Stimulus process started" severity note;
+        s_a <= "00";
+        s_b <= "01";
+        s_c <= "10";
+        s_d <= "11";
+        s_e <= "00";
+        s_f <= "01";
+        
+        s_sel <= "000";
+        wait for 10ns;        
+        s_sel <= "001";
+        wait for 10ns;
+        s_sel <= "010";
+        wait for 10ns;        
+        s_sel <= "011";
+        wait for 10ns;
+        s_sel <= "100";
+        wait for 10ns;        
+        s_sel <= "101";
+        
+        wait;
+    end process p_stimulus;
+  ```
 **C)Screenshot of simulation**
 
 ## TOP module description and simulations
-napojení signálů --> stejný jako PA /medium ,které napojuje piny desky `Arty-A7-100` na ten kód/
+### napojení signálů --> stejný jako PA /medium ,které napojuje piny desky `Arty-A7-100` na ten kód/ ,(TOP module is designed for connecting pins of `Arty-A7-100` to code)
+
+**A)VHDL design**
+```vhdl
+ -- Connecting testbench signals with beep_generator
+    uut_parking_assistant : entity work.parking_assistant_6sensor
+    generic map(     
+    
+        -- Optionable constants  
+        g_tone_freq    => 1000,
+        g_slow_period  => 5,
+        g_fast_period  => 2,
+        
+        -- Thresholds of measured distances
+        g_distance_threshold1  =>  50,
+        g_distance_threshold2  =>  150,
+        g_distance_threshold3  =>  250,
+        g_distance_threshold4  =>  400
+    )
+    port map  (
+         -- Clk & Reset signal
+        clk        =>  CLK100MHZ,
+        reset      =>  BTN(0),
+        
+        -- Inputs from sensors            
+        sensor0_i  =>  JB(0),
+        sensor1_i  =>  JB(1),
+        sensor2_i  =>  JB(2),
+        sensor3_i  =>  JB(3),
+        sensor4_i  =>  JB(4),
+        sensor5_i  =>  JB(5),
+        
+        -- Outputs to sensors              
+        sensor0_o  =>  JC(0),
+        sensor1_o  =>  JC(1),
+        sensor2_o  =>  JC(2),
+        sensor3_o  =>  JC(3),
+        sensor4_o  =>  JC(4),
+        sensor5_o  =>  JC(5),
+         
+        -- LEDs output & and their mux selector output            
+        LED_o(0)   =>  JA(0),
+        LED_o(1)   =>  JA(1),
+        sel_o(0)   =>  JA(2),
+        sel_o(1)   =>  JA(3),
+        sel_o(2)   =>  JA(4),
+                       
+        -- Sound output
+        sound_o    =>  JA(5)
+    );
+   ```
+**B)Screenshot of simulation**
 
 ## Video
 
 ## References
---inspo video od Kryštofa
+[Explaining ultrasonic sensor](https://www.youtube.com/watch?v=6F1B_N6LuKw&t=424s)
 --soubor reference manual senzoru 
 
 
