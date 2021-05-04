@@ -3,7 +3,7 @@
 ## Team members 
 This project was created by Tereza Beránková,Samuel Blecha,Kryštof Buroň,Šimon Cieslar & Zuzana Czmelová
 
-[Tereza Beránková]( https://github.com/),
+[Tereza Beránková]( https://github.com/) - ,
 [Samuel Blecha]( https://github.com/) ,
 [Kryštof Buroň]( https://github.com/),
 [Šimon Cieslar]( https://github.com/),
