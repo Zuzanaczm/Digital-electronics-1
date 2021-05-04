@@ -129,7 +129,8 @@ The project is about a parking assistant with 6 sensors (3 in front & 3 at the b
  ```
  **B)VHDL design entities**
  
- 
+
+ There are 7 entities connected to parking assistant. We have 2 same entities `urm_driver_decoder`  and 5 single entities `distance_comparator`, `tone_gen`, ` mux_led`, `clk_en0`, `bin_cnt0`.
  
   ```vhdl
   --------------------------------------------------------------------
@@ -240,7 +241,7 @@ end Behavioral;
 **C)Testbench for parking assistant** 
  
  
-Konstanty v tomhle testbenchi byly  nadefinované  tímhle způsobem - ruzne distance -> levely 
+ There are 3 processes in testbench - `p_clk_gen` with frequency of 100MHz ,  `p_reset_gen` , `p_stimulus` . Function of processes are displayed in simulations below.
  
   ```vhdl
   --------------------------------------------------------------------
@@ -379,19 +380,32 @@ Konstanty v tomhle testbenchi byly  nadefinované  tímhle způsobem - ruzne dis
   ```    
   
  **D)Screenshots of simulation** 
+ 
+ In the first picture we can see the whole simulation. The signals with shades of blue are for front side, with shades of light brown are for back side, red signals represent updating internal signals that change state , green s_tone signals represent sound output, green s_state signal is internal signal of URM driver decoder and on last 2 signals we can see LED output. Signals s_sensor_in_o are sending 10us pulses to sensors and s_sensor_out_i are receiving returning signals. From a short look  we can tell that it works properly. The second and third picture is zoomed image of the first picture. The 1st zoomed area is marked with first violet vertical line and the 2nd zoomed area is marked with second violet vertical line. S_sensor2_out_i and s_sensor5_out_i in this highlighted area are 5000us long,  s_sensor1_out_i and s_sensor4_out_i are 3000us long. We will take a look at the zoomed pictures.
+ 
  ![Images](images/PA1.png)
+ 
+ In the picture we can see ends of s_sensor1_out_i and s_sensor4_out_i which are 3000us long. After the signals change the state to 0, the update is triggered and every state changes to its right following position and the measured distance is saved to its proper value s_dist_lvl1 and s_dist_lvl4. With calculation we can check that 3000us long signal corresponds to 51cm which is above first treshold and this value is represented by `10` . After all the URM driver decoder sends 10us pulse into 2 different sensors and then waits for returning signal. At the end of this picture we can see returning signals (s_sensor2_out_i and s_sensor5_out_i)  and we will take a look on the ends of these signals in the next picture.
  
  ![Images](images/PA2.png)
   
- ![Images](images/PA3.png)
-   
+  In this picture it works the same like in simulation above but with s_sensor2_out_i and s_sensor5_out_i signals.The length of these signals are 5000us and it corresponds to 86cm which is again above first treshold and this value is represented by `10`. 
+  
  ![Images](images/PA4.png)
+   
+   This is close look when the update is triggered and it works properly - it changes states to right positions.
+   
+ ![Images](images/PA3.png)
+
+#### Submodules of park assistant :
 
 #### 2.URM (ultrasonic range meter) driver decoder 
-**A)Process of URM driver decoder** 
+**A)VHDL design of URM driver decoder** 
+
+  Process for URM driver decoder. URM driver decoder communicates with  each sensor and it sends 10us pulses, then waits for pulses coming back from the sensor. When it comes , it counts its length. After that, the length is assigned one of four tresholds. 
 
   ``` vhdl
---------------------------------------------------------------------
+   --------------------------------------------------------------------
     -- Process for sending 10us signal into a sensor & 
     -- For measuring returning signal
     --------------------------------------------------------------------
@@ -465,6 +479,8 @@ Konstanty v tomhle testbenchi byly  nadefinované  tímhle způsobem - ruzne dis
   
   **B)Testbench**
   
+  In testbench we simulate signals which are coming back.
+  
   ```vhdl
       --------------------------------------------------------------------
     -- Clock generation process
@@ -529,13 +545,29 @@ Konstanty v tomhle testbenchi byly  nadefinované  tímhle způsobem - ruzne dis
 ``` 
 **C) Screenshots of simulation**
 
+
+The first picture is a look on the whole simulation which is 50ms long.
+
 ![Images](images/URM1.png)
+
+In the zoomed picture we can find the ending of returning signal which is then added to s_dist_lvl_o. After that the update is triggered and the new cycle starts again.
+
 ![Images](images/URM2.png)
-![Images](images/URMU.png)
+
+Here we can see the beginning of this simulation  when the reset is on (it is in value of 1) . When the reset is in value of 0 then the whole cycle starts ( Initial --> Pulse -->  Waiting --> Count --> Initial...).
+
 ![Images](images/URMS.png)
 
-#### 3.Beep generator ("submodules" of park assistant)
+Here we can see the proper function of update. 
+
+![Images](images/URMU.png)
+
+
+#### 3.Beep generator 
 **A)VHDL design**
+
+
+
 ``` vhdl
  --------------------------------------------------------------------
     -- Process for changing frequency of the tone
