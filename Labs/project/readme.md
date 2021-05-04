@@ -26,10 +26,10 @@ The project is about parking assistant with 6 sensors (3 in front & 3 at the bac
 
 The description of hardware is pictured in the block diagram. 
 
-If you can not see this image properly, there is a pdf file called Project_PS.pdf --> [Link](https://github.com/Zuzanaczm/Digital-electronics-1/blob/main/Labs/project/Project_PS.pdf)
 
 ![Images](images/block_diagram.png)
 
+If you want to see original file of this diagram, you can find Project_PS.pdf file in this project folder...
 
 ### VHDL design for parking assistant 
 
@@ -1018,6 +1018,16 @@ TOP module is designed for connecting code signal to pins of `Arty-A7-100` but i
         sound_o    =>  JA(5)
     );
    ```
+   
+## Logical circuit to decode LED outputs
+
+These selecting signal sel_i are switching between individual bargraphs and outputs LED_o determine which LEDs will be on.
+
+![Images](images/logical_circuit.png)
+
+In this picture there are LEDs connected to our logical circuit.
+
+![Images](images/DPS.png)
 
 
 ## Video
